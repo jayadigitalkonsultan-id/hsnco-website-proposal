@@ -1,0 +1,3230 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Website development proposal prepared for HSNCO by Jaya Digital Konsultan."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <title>HSNCO — Website Development Proposal | Jaya Digital Konsultan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #17202c;
+        --navy: #152b48;
+        --muted: #626c79;
+        --line: #e1e5e9;
+        --paper: #f6f7f9;
+        --blue: #285e97;
+        --max: 1200px;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 108px;
+      }
+      body {
+        margin: 0;
+        background: white;
+        color: var(--ink);
+        font-family: Manrope, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+      h1,
+      h2,
+      h3 {
+        line-height: 1.2;
+      }
+      h1,
+      h2 {
+        font-weight: 500;
+        letter-spacing: -0.05em;
+      }
+      h2 {
+        font-size: clamp(32px, 3.5vw, 47px);
+      }
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+      }
+      p {
+        color: var(--muted);
+      }
+      button,
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+      a:focus-visible,
+      button:focus-visible,
+      summary:focus-visible {
+        outline: 3px solid #298ac4;
+        outline-offset: 5px;
+      }
+      ::selection {
+        background: #dce9f5;
+      }
+      .container {
+        width: min(var(--max), calc(100% - 96px));
+        margin-inline: auto;
+      }
+      .skip {
+        position: fixed;
+        top: -100px;
+        left: 20px;
+        background: white;
+        padding: 12px 20px;
+        z-index: 200;
+      }
+      .skip:focus {
+        top: 10px;
+      }
+      .eyebrow {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
+        line-height: 1.6;
+      }
+      .section-label {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: var(--muted);
+        margin-bottom: 35px;
+      }
+      .section-label span {
+        color: var(--blue);
+      }
+      .section-label::after {
+        content: "";
+        width: 44px;
+        height: 1px;
+        background: var(--line);
+      }
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        min-height: 48px;
+        padding: 12px 21px;
+        background: var(--navy);
+        color: #fff;
+        border: 1px solid var(--navy);
+        font-size: 11px;
+        font-weight: 600;
+        transition:
+          background 0.2s,
+          transform 0.2s;
+      }
+      .button:hover {
+        background: #264868;
+        transform: translateY(-2px);
+      }
+      .button.secondary {
+        background: transparent;
+        color: var(--ink);
+        border-color: #cbd1d8;
+      }
+      .button.secondary:hover {
+        background: var(--paper);
+      }
+      .arrow {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1;
+      }
+      .text-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 25px;
+        font-size: 11px;
+        font-weight: 700;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #aab6c4;
+        transition:
+          color 0.2s,
+          gap 0.2s;
+      }
+      .text-link:hover {
+        color: var(--blue);
+        gap: 32px;
+      }
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .site-header {
+        position: sticky;
+        top: 0;
+        background: #fff;
+        z-index: 50;
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        height: 88px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+      .brand img {
+        width: 115px;
+        height: auto;
+      }
+      .brand-note {
+        padding-left: 15px;
+        border-left: 1px solid var(--line);
+        font-size: 9px;
+        line-height: 1.7;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 23px;
+      }
+      .nav-links > a {
+        font-size: 10px;
+        font-weight: 600;
+        position: relative;
+        white-space: nowrap;
+      }
+      .nav-links > a:not(.button)::after {
+        content: "";
+        position: absolute;
+        bottom: -9px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: var(--navy);
+        transition: width 0.2s;
+      }
+      .nav-links > a:hover::after,
+      .nav-links > a[aria-current]::after {
+        width: 100%;
+      }
+      .nav-links .button {
+        font-size: 10px;
+        gap: 18px;
+        min-height: 40px;
+        padding: 9px 15px;
+      }
+      .menu-toggle {
+        display: none;
+        border: 1px solid var(--line);
+        background: white;
+        width: 44px;
+        height: 44px;
+        padding: 12px;
+      }
+      .menu-toggle span {
+        height: 1px;
+        background: var(--ink);
+        display: block;
+        margin: 5px 0;
+      }
+      .hero {
+        padding-top: 44px;
+      }
+      .cover-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .confidential {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 9px;
+        letter-spacing: 0.13em;
+        color: var(--muted);
+        text-transform: uppercase;
+      }
+      .confidential svg {
+        width: 12px;
+        height: 12px;
+      }
+      .document-code {
+        font-size: 9px;
+        color: var(--muted);
+        letter-spacing: 0.1em;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 60px;
+        align-items: center;
+        padding: 65px 0 66px;
+      }
+      .hero h1 {
+        font-size: clamp(48px, 5.9vw, 79px);
+        line-height: 1.08;
+        letter-spacing: -0.065em;
+        margin: 20px 0 24px;
+      }
+      .hero h1 span {
+        color: #7c8796;
+      }
+      .hero .subheading {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--ink);
+        max-width: 520px;
+        line-height: 1.7;
+      }
+      .hero .intro {
+        max-width: 470px;
+        font-size: 12px;
+        margin: 15px 0 28px;
+      }
+      .hero-kicker {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        color: var(--blue);
+      }
+      .hero-kicker::before {
+        content: "";
+        width: 24px;
+        height: 2px;
+        background: var(--blue);
+      }
+      .cover-art {
+        height: 375px;
+        position: relative;
+        background: #f4f6f8;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 28px;
+      }
+      .art-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(#dde3e980 1px, transparent 1px),
+          linear-gradient(90deg, #dde3e980 1px, transparent 1px);
+        background-size: 38px 38px;
+        mask-image: linear-gradient(135deg, black, transparent);
+      }
+      .art-top,
+      .art-bottom {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 8px;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: #5c6c80;
+      }
+      .art-top strong {
+        font-size: 12px;
+        letter-spacing: 0.05em;
+      }
+      .art-bottom {
+        border-top: 1px solid #ced6df;
+        padding-top: 15px;
+      }
+      .architecture {
+        position: absolute;
+        width: 240px;
+        height: 240px;
+        left: 50%;
+        top: 49%;
+        transform: translate(-50%, -50%);
+      }
+      .plane {
+        position: absolute;
+        width: 170px;
+        height: 170px;
+        transform: rotate(-30deg) skewX(25deg) scaleY(0.8);
+        left: 36px;
+        border: 1px solid #8294ab;
+        box-shadow: 15px 18px 20px #172c4410;
+      }
+      .plane.one {
+        top: 80px;
+        background: #e0e7ee;
+      }
+      .plane.two {
+        top: 45px;
+        background: #bcc9d8;
+        opacity: 0.85;
+      }
+      .plane.three {
+        top: 10px;
+        background: var(--navy);
+        border-color: var(--navy);
+        display: grid;
+        place-items: center;
+      }
+      .plane.three::after {
+        content: "";
+        width: 102px;
+        height: 102px;
+        border: 1px solid #a8bfd18a;
+        background:
+          repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 25px,
+            #94adc138 26px
+          ),
+          repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 25px,
+            #94adc138 26px
+          );
+      }
+      .art-side {
+        position: absolute;
+        right: 12px;
+        top: 150px;
+        writing-mode: vertical-rl;
+        font-size: 8px;
+        letter-spacing: 0.15em;
+        color: #778595;
+      }
+      .hero-meta {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr 1.4fr 0.5fr 0.5fr;
+        gap: 25px;
+        padding: 27px 0;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        margin: 0;
+      }
+      .hero-meta dt,
+      dt {
+        font-size: 9px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 7px;
+      }
+      .hero-meta dd,
+      dd {
+        margin: 0;
+        font-size: 11px;
+        font-weight: 600;
+      }
+      .hero-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 19px 0;
+        font-size: 9px;
+        color: var(--muted);
+      }
+      .hero-bottom a {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .section {
+        padding: 100px 0;
+      }
+      .split {
+        display: grid;
+        grid-template-columns: 0.85fr 1.4fr;
+        gap: 100px;
+      }
+      .summary-copy .lead {
+        font-size: 21px;
+        line-height: 1.65;
+        color: var(--ink);
+        letter-spacing: -0.025em;
+        margin-bottom: 20px;
+      }
+      .summary-copy p + p {
+        margin-top: 15px;
+      }
+      .summary-copy p {
+        font-size: 13px;
+      }
+      .summary-points {
+        display: flex;
+        gap: 34px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+        margin-top: 30px;
+        flex-wrap: wrap;
+      }
+      .summary-points span {
+        font-size: 10px;
+        font-weight: 600;
+        color: var(--navy);
+      }
+      .summary-points span::before {
+        content: "✓";
+        margin-right: 8px;
+      }
+      .soft {
+        background: var(--paper);
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 50px;
+        margin-bottom: 42px;
+      }
+      .section-head p {
+        max-width: 420px;
+        font-size: 12px;
+      }
+      .concepts-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+      }
+      .concept-art {
+        height: 220px;
+        padding: 25px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .concept-art .art-label {
+        font-size: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        position: relative;
+        z-index: 1;
+      }
+      .concept-art .concept-number {
+        font-size: 100px;
+        font-weight: 400;
+        letter-spacing: -0.07em;
+        line-height: 1.1;
+        position: relative;
+        z-index: 1;
+      }
+      .concept-art .swatches {
+        display: flex;
+        gap: 5px;
+        position: absolute;
+        right: 25px;
+        bottom: 28px;
+      }
+      .swatches i {
+        width: 14px;
+        height: 14px;
+        border: 1px solid #ffffff50;
+      }
+      .concept-one {
+        background: #0b132b;
+        color: #d4b97c;
+      }
+      .concept-one::after {
+        content: "";
+        position: absolute;
+        width: 190px;
+        height: 230px;
+        border: 1px solid #c6a15b50;
+        right: -35px;
+        top: 37px;
+        transform: rotate(-25deg);
+      }
+      .concept-two {
+        background: #e8e8e6;
+        color: #171719;
+      }
+      .concept-two::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 35%;
+        height: 100%;
+        background: #171719;
+      }
+      .concept-three {
+        background: #171717;
+        color: #dcc69b;
+      }
+      .concept-three::after {
+        content: "";
+        position: absolute;
+        inset: 25px 25px 25px 60%;
+        border-left: 1px solid #b89a5a70;
+        border-right: 1px solid #b89a5a70;
+      }
+      .concept-caption {
+        font-size: 8px;
+        color: var(--muted);
+        margin-top: 8px;
+        letter-spacing: 0.04em;
+      }
+      .concept-body {
+        padding: 23px 0 0;
+      }
+      .concept-body .eyebrow {
+        font-size: 9px;
+        color: var(--muted);
+      }
+      .concept-body h3 {
+        margin: 9px 0 12px;
+        font-size: 21px;
+      }
+      .concept-body p {
+        font-size: 12px;
+        min-height: 66px;
+      }
+      .tags {
+        display: flex;
+        gap: 7px;
+        flex-wrap: wrap;
+        margin: 20px 0;
+      }
+      .tags span {
+        font-size: 8px;
+        letter-spacing: 0.02em;
+        border: 1px solid #d9dee4;
+        padding: 3px 8px;
+      }
+      .demo-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #ccd3dc;
+        padding: 17px 0 0;
+        font-size: 11px;
+        font-weight: 700;
+      }
+      .demo-link:hover {
+        color: var(--blue);
+      }
+      .demo-url {
+        font-size: 9px;
+        color: var(--muted);
+        overflow-wrap: anywhere;
+        margin-top: 5px;
+      }
+      .concept-note {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 40px;
+        padding-top: 22px;
+        border-top: 1px solid #d9dfe6;
+        font-size: 11px;
+        color: var(--muted);
+      }
+      .concept-note b {
+        color: var(--navy);
+        font-weight: 600;
+      }
+      .transition {
+        padding-top: 75px;
+      }
+      .transition h3 {
+        font-size: 26px;
+        margin-bottom: 30px;
+      }
+      .workflow {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 22px;
+      }
+      .workflow article {
+        position: relative;
+        border-top: 1px solid #cbd4df;
+        padding-top: 20px;
+      }
+      .workflow article::before {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: var(--navy);
+        top: -4px;
+        left: 0;
+      }
+      .step-number {
+        font-size: 10px;
+        color: var(--blue);
+        font-weight: 600;
+      }
+      .workflow h4 {
+        font-size: 12px;
+        margin: 11px 0 10px;
+        line-height: 1.5;
+      }
+      .workflow p {
+        font-size: 11px;
+      }
+      .scope-row {
+        display: grid;
+        grid-template-columns: 50px 1.05fr 1.25fr;
+        gap: 32px;
+        border-top: 1px solid var(--line);
+        padding: 32px 0;
+      }
+      .scope-row:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+      .scope-index {
+        font-size: 12px;
+        color: #788595;
+      }
+      .scope-title h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+      .scope-title p {
+        font-size: 12px;
+        max-width: 335px;
+      }
+      .scope-price {
+        display: block;
+        margin-top: 20px;
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--navy);
+      }
+      .check-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 24px;
+        align-content: start;
+      }
+      .check-list li {
+        position: relative;
+        padding-left: 20px;
+        font-size: 11px;
+        color: var(--muted);
+      }
+      .check-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--blue);
+      }
+      .investment-panel {
+        background: var(--navy);
+        color: #fff;
+        padding: 50px 52px;
+      }
+      .investment-panel .eyebrow {
+        color: #becbdd;
+      }
+      .investment-panel h2 {
+        margin: 14px 0 17px;
+      }
+      .investment-panel > p {
+        color: #c0ccda;
+        max-width: 520px;
+        font-size: 12px;
+      }
+      .investment-breakdown {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin: 44px 0 35px;
+      }
+      .investment-item + .investment-item {
+        border-left: 1px solid #ffffff26;
+        padding-left: 30px;
+      }
+      .investment-item h3 {
+        font-size: 12px;
+        font-weight: 500;
+        color: #d2dbe7;
+      }
+      .investment-item strong {
+        display: block;
+        font-size: 31px;
+        font-weight: 500;
+        letter-spacing: -0.045em;
+        line-height: 1.3;
+        margin: 13px 0 10px;
+      }
+      .investment-item p {
+        font-size: 9px;
+        color: #b8c6d7;
+      }
+      .total {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        border-top: 1px solid #ffffff35;
+        padding-top: 31px;
+      }
+      .total .eyebrow {
+        font-size: 9px;
+      }
+      .total p {
+        font-size: 11px;
+        color: #bac8d9;
+        margin-top: 7px;
+      }
+      .total-amount {
+        text-align: right;
+      }
+      .total-amount strong {
+        display: block;
+        font-size: clamp(34px, 4.5vw, 59px);
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: -0.05em;
+      }
+      .total-amount span {
+        font-size: 10px;
+        color: #c4d0df;
+      }
+      .investment-foot {
+        display: flex;
+        justify-content: space-between;
+        gap: 25px;
+        margin-top: 20px;
+        font-size: 10px;
+        color: var(--muted);
+      }
+      .investment-foot button {
+        background: none;
+        border: 0;
+        color: var(--ink);
+        padding: 0;
+        font-size: 10px;
+      }
+      .infrastructure-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+      }
+      .optional-badge {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #d0d8e1;
+        padding: 4px 9px;
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        color: var(--blue);
+        margin-bottom: 18px;
+      }
+      .infrastructure-grid h3 {
+        font-size: 26px;
+        margin-bottom: 16px;
+      }
+      .infrastructure-grid p {
+        font-size: 12px;
+      }
+      .hosting-price {
+        font-size: 35px;
+        font-weight: 500;
+        letter-spacing: -0.04em;
+        margin: 0 0 20px;
+        line-height: 1.4;
+      }
+      .hosting-price small {
+        font-size: 12px;
+        color: var(--muted);
+        font-weight: 400;
+        letter-spacing: 0;
+      }
+      .infrastructure-details {
+        border-left: 1px solid var(--line);
+        padding-left: 40px;
+      }
+      .infrastructure-details .check-list {
+        margin: 25px 0;
+      }
+      .infrastructure-details .note {
+        font-size: 10px;
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+      }
+      .investment-summary {
+        margin-top: 65px;
+        padding-top: 35px;
+        border-top: 1px solid var(--line);
+      }
+      .investment-summary > h3 {
+        font-size: 23px;
+        margin-bottom: 25px;
+      }
+      .summary-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      }
+      .cost-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 11px;
+      }
+      .cost-table caption {
+        text-align: left;
+        font-weight: 700;
+        font-size: 11px;
+        margin-bottom: 12px;
+      }
+      .cost-table th {
+        text-align: left;
+        font-weight: 400;
+      }
+      .cost-table td {
+        text-align: right;
+        white-space: nowrap;
+      }
+      .cost-table th,
+      .cost-table td {
+        padding: 9px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .cost-table tfoot th,
+      .cost-table tfoot td {
+        font-weight: 700;
+        font-size: 14px;
+        padding-top: 17px;
+        border-bottom: 0;
+      }
+      .first-year {
+        background: #eaf0f5;
+        padding: 27px 30px;
+      }
+      .first-year > p {
+        font-size: 10px;
+      }
+      .first-year .optional-line {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        font-size: 10px;
+        padding-bottom: 18px;
+        margin-bottom: 18px;
+        border-bottom: 1px solid #ccd6e0;
+      }
+      .first-year h4 {
+        font-size: 11px;
+        margin: 0;
+      }
+      .first-year strong {
+        font-size: 32px;
+        font-weight: 500;
+        letter-spacing: -0.035em;
+        display: block;
+        margin: 7px 0 10px;
+      }
+      .deliverables {
+        margin-top: 65px;
+        padding-top: 40px;
+        border-top: 1px solid var(--line);
+        display: grid;
+        grid-template-columns: 1fr 1.6fr;
+        gap: 70px;
+      }
+      .deliverables h3 {
+        font-size: 26px;
+        margin-bottom: 15px;
+      }
+      .deliverables p {
+        font-size: 11px;
+      }
+      .principles {
+        margin-top: 65px;
+      }
+      .principles h3 {
+        font-size: 26px;
+        margin-bottom: 28px;
+      }
+      .four-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+      }
+      .principle {
+        border-top: 1px solid var(--line);
+        padding-top: 23px;
+      }
+      .principle .symbol {
+        font-size: 20px;
+        color: var(--blue);
+        margin-bottom: 15px;
+      }
+      .principle h4 {
+        font-size: 13px;
+        margin: 0 0 10px;
+      }
+      .principle p {
+        font-size: 11px;
+      }
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin-top: 45px;
+      }
+      .process-step {
+        border-top: 1px solid #cfd7e1;
+        padding-top: 20px;
+      }
+      .process-step .step-top {
+        display: flex;
+        justify-content: space-between;
+        color: var(--blue);
+        font-size: 11px;
+      }
+      .process-step h3 {
+        font-size: 26px;
+        margin: 20px 0 12px;
+      }
+      .process-step p {
+        font-size: 12px;
+      }
+      .timeline {
+        margin-top: 35px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        font-size: 11px;
+        color: var(--muted);
+        border-top: 1px solid var(--line);
+        padding-top: 23px;
+      }
+      .timeline svg {
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
+      }
+      .about-copy p {
+        font-size: 13px;
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 35px;
+        margin-top: 35px;
+      }
+      .about-grid article {
+        border-top: 1px solid var(--line);
+        padding-top: 20px;
+      }
+      .about-grid h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .about-grid p {
+        font-size: 11px;
+      }
+      .commercial {
+        margin-top: 65px;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 25px 0;
+      }
+      .commercial summary {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+        font-size: 17px;
+        font-weight: 600;
+      }
+      .commercial summary::-webkit-details-marker {
+        display: none;
+      }
+      .commercial summary::after {
+        content: "+";
+        font-size: 23px;
+        font-weight: 400;
+      }
+      .commercial[open] summary::after {
+        content: "−";
+      }
+      .commercial ol {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 45px;
+        padding-left: 19px;
+        margin: 25px 0 0;
+        color: var(--muted);
+        font-size: 11px;
+      }
+      .commercial li {
+        padding-left: 5px;
+      }
+      .closing {
+        background: #f0f3f6;
+        text-align: center;
+        padding: 85px 25px;
+      }
+      .closing .eyebrow {
+        color: var(--blue);
+        margin-bottom: 25px;
+      }
+      .closing h2 {
+        font-size: clamp(36px, 4.6vw, 61px);
+        max-width: 770px;
+        margin: auto;
+      }
+      .closing p {
+        font-size: 12px;
+        max-width: 630px;
+        margin: 22px auto 0;
+      }
+      .closing p + p {
+        margin-top: 13px;
+        font-size: 11px;
+      }
+      .closing .actions {
+        justify-content: center;
+        margin-top: 30px;
+      }
+      .acceptance {
+        display: grid;
+        grid-template-columns: 1fr 1.35fr;
+        gap: 85px;
+      }
+      .acceptance h2 {
+        font-size: 36px;
+      }
+      .acceptance-intro p {
+        font-size: 12px;
+        margin-top: 20px;
+        max-width: 335px;
+      }
+      .acceptance-data {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px 30px;
+        margin: 0;
+      }
+      .acceptance-data dd {
+        font-size: 12px;
+      }
+      .acceptance-data .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: #79601e;
+        background: #f7f2e5;
+        padding: 3px 9px;
+        font-size: 10px;
+        font-weight: 500;
+      }
+      .status::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #a17b27;
+      }
+      .acceptance-action {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        margin-top: 28px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+      }
+      .acceptance-action p {
+        font-size: 9px;
+        max-width: 240px;
+      }
+      .site-footer {
+        border-top: 1px solid var(--line);
+        padding: 30px 0 20px;
+      }
+      .footer-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+      }
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .footer-brand img {
+        width: 115px;
+        height: auto;
+        flex-shrink: 0;
+        object-fit: contain;
+      }
+      .footer-brand strong {
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .footer-brand p {
+        font-size: 10px;
+      }
+      .footer-note {
+        text-align: right;
+        font-size: 9px;
+        color: var(--muted);
+      }
+      .footer-bottom {
+        border-top: 1px solid var(--line);
+        margin-top: 25px;
+        padding-top: 18px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        font-size: 9px;
+        color: var(--muted);
+      }
+      dialog {
+        border: 1px solid var(--line);
+        padding: 42px;
+        max-width: 470px;
+        width: calc(100% - 40px);
+        color: var(--ink);
+        background: #fff;
+      }
+      dialog::backdrop {
+        background: #0e1d32a6;
+      }
+      dialog h2 {
+        font-size: 29px;
+        margin: 18px 0;
+      }
+      dialog p {
+        font-size: 13px;
+        margin-bottom: 25px;
+      }
+      dialog .eyebrow {
+        color: var(--blue);
+      }
+      dialog .button {
+        width: 100%;
+      }
+      body:has(dialog[open]) {
+        overflow: hidden;
+      }
+      .reveal {
+        animation: fade-in 0.7s both;
+      }
+      .reveal.pending {
+        animation: none;
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      .reveal.visible {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        transition:
+          opacity 0.6s,
+          transform 0.6s;
+      }
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @media (min-width: 1440px) {
+        .hero-grid {
+          padding-block: 80px;
+        }
+        .cover-art {
+          height: 400px;
+        }
+      }
+      @media (max-width: 1150px) {
+        .brand-note {
+          display: none;
+        }
+        .nav-links {
+          gap: 16px;
+        }
+        .container {
+          width: calc(100% - 64px);
+        }
+        .hero-grid {
+          gap: 35px;
+        }
+        .split {
+          gap: 60px;
+        }
+        .acceptance {
+          gap: 50px;
+        }
+      }
+      @media (max-width: 960px) {
+        .nav {
+          height: 78px;
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: white;
+          border-bottom: 1px solid var(--line);
+          padding: 22px 32px;
+          max-height: calc(100dvh - 78px);
+          overflow: auto;
+        }
+        .nav-links.open {
+          display: flex;
+          align-items: stretch;
+          flex-direction: column;
+          gap: 0;
+        }
+        .nav-links > a {
+          padding: 13px 0;
+          font-size: 12px;
+        }
+        .nav-links > a:not(.button)::after {
+          bottom: 7px;
+        }
+        .nav-links .button {
+          margin-top: 12px;
+        }
+        .brand-note {
+          display: block;
+        }
+        .hero h1 {
+          font-size: 57px;
+        }
+        .cover-art {
+          height: 330px;
+        }
+        .architecture {
+          transform: translate(-50%, -50%) scale(0.85);
+        }
+        .hero-meta {
+          grid-template-columns: 1fr 1.4fr 1.4fr;
+        }
+        .hero-grid {
+          grid-template-columns: 1.25fr 1fr;
+        }
+        .concepts-grid {
+          gap: 18px;
+        }
+        .concept-art {
+          height: 190px;
+          padding: 20px;
+        }
+        .concept-body h3 {
+          font-size: 18px;
+        }
+        .workflow {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+        }
+        .scope-row {
+          grid-template-columns: 30px 1fr 1.2fr;
+          gap: 22px;
+        }
+        .investment-panel {
+          padding: 38px;
+        }
+        .investment-item strong {
+          font-size: 26px;
+        }
+        .infrastructure-grid {
+          gap: 40px;
+        }
+        .four-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .split {
+          gap: 40px;
+        }
+        .process-grid {
+          gap: 22px;
+        }
+        .acceptance {
+          grid-template-columns: 1fr 1.3fr;
+          gap: 35px;
+        }
+        .acceptance-action {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+      @media (max-width: 700px) {
+        html {
+          scroll-padding-top: 96px;
+        }
+        .container {
+          width: calc(100% - 40px);
+        }
+        .hero {
+          padding-top: 25px;
+        }
+        .document-code {
+          display: none;
+        }
+        .hero-grid {
+          grid-template-columns: 1fr;
+          padding: 40px 0 30px;
+          gap: 35px;
+        }
+        .hero h1 {
+          font-size: clamp(43px, 10vw, 65px);
+        }
+        .hero .subheading {
+          font-size: 14px;
+        }
+        .hero .intro {
+          font-size: 12px;
+        }
+        .cover-art {
+          height: 260px;
+        }
+        .architecture {
+          transform: translate(-50%, -50%) scale(0.7);
+        }
+        .art-side {
+          top: 90px;
+        }
+        .hero-meta {
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+        }
+        .hero-meta div:nth-child(3) {
+          grid-column: 1/-1;
+          grid-row: 2;
+        }
+        .hero-bottom > span {
+          max-width: 155px;
+        }
+        .section {
+          padding: 65px 0;
+        }
+        .section-label {
+          margin-bottom: 25px;
+        }
+        .split,
+        .infrastructure-grid,
+        .summary-grid,
+        .deliverables,
+        .acceptance {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+        .summary-copy .lead {
+          font-size: 19px;
+        }
+        .summary-points {
+          gap: 18px;
+        }
+        .section-head {
+          display: block;
+          margin-bottom: 30px;
+        }
+        .section-head p {
+          margin-top: 20px;
+        }
+        .concepts-grid {
+          grid-template-columns: 1fr;
+          gap: 38px;
+        }
+        .concept-art {
+          height: 235px;
+        }
+        .concept-body p {
+          min-height: 0;
+        }
+        .concept-body h3 {
+          font-size: 23px;
+        }
+        .tags {
+          margin: 16px 0;
+        }
+        .concept-note {
+          align-items: flex-start;
+          font-size: 10px;
+        }
+        .transition {
+          padding-top: 50px;
+        }
+        .workflow {
+          grid-template-columns: 1fr 1fr;
+          gap: 25px;
+        }
+        .workflow article:last-child {
+          grid-column: 1/-1;
+        }
+        .scope-row {
+          grid-template-columns: 25px 1fr;
+          gap: 13px;
+          padding: 25px 0;
+        }
+        .scope-row .check-list {
+          grid-column: 2;
+          margin-top: 10px;
+        }
+        .scope-title h3 {
+          font-size: 22px;
+        }
+        .scope-price {
+          margin-top: 12px;
+        }
+        .check-list {
+          gap: 10px 15px;
+        }
+        .investment-panel {
+          padding: 30px 24px;
+        }
+        .investment-panel h2 {
+          font-size: 31px;
+        }
+        .investment-breakdown {
+          grid-template-columns: 1fr;
+          gap: 23px;
+          margin: 30px 0;
+        }
+        .investment-item + .investment-item {
+          padding: 20px 0 0;
+          border-left: 0;
+          border-top: 1px solid #ffffff26;
+        }
+        .investment-item strong {
+          font-size: 31px;
+          margin: 9px 0;
+        }
+        .total {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 20px;
+        }
+        .total-amount {
+          text-align: left;
+        }
+        .total-amount strong {
+          font-size: 43px;
+        }
+        .investment-foot {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+        .infrastructure-details {
+          border: 0;
+          border-top: 1px solid var(--line);
+          padding: 25px 0 0;
+        }
+        .hosting-price {
+          font-size: 32px;
+        }
+        .summary-grid {
+          gap: 28px;
+        }
+        .first-year {
+          padding: 24px;
+        }
+        .first-year .optional-line {
+          flex-direction: column;
+          gap: 5px;
+        }
+        .first-year strong {
+          font-size: 32px;
+        }
+        .deliverables {
+          margin-top: 45px;
+          padding-top: 30px;
+        }
+        .four-grid {
+          gap: 25px 20px;
+        }
+        .principles {
+          margin-top: 45px;
+        }
+        .process-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 30px;
+        }
+        .process-step h3 {
+          margin-top: 14px;
+        }
+        .about-grid {
+          gap: 25px;
+        }
+        .commercial {
+          margin-top: 45px;
+        }
+        .commercial ol {
+          grid-template-columns: 1fr;
+        }
+        .closing {
+          padding: 65px 20px;
+        }
+        .closing .actions {
+          flex-direction: column;
+        }
+        .closing .actions .button {
+          width: 100%;
+          max-width: 300px;
+        }
+        .acceptance-data {
+          gap: 20px;
+        }
+        .acceptance-data dd {
+          font-size: 11px;
+        }
+        .acceptance-action {
+          flex-direction: row;
+          align-items: center;
+        }
+        .acceptance-action .button {
+          gap: 14px;
+          flex-shrink: 0;
+          padding: 12px 15px;
+          font-size: 10px;
+        }
+        .footer-top {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 20px;
+        }
+        .footer-brand {
+          gap: 12px;
+        }
+        .footer-note {
+          text-align: left;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .footer-brand img {
+          width: 95px;
+        }
+      }
+      @media (max-width: 380px) {
+        .brand-note {
+          font-size: 8px;
+          padding-left: 10px;
+        }
+        .hero h1 {
+          font-size: 41px;
+        }
+        .check-list,
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+        .scope-row .check-list {
+          grid-column: 1/-1;
+        }
+        .acceptance-action {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .total-amount strong {
+          font-size: 36px;
+        }
+        .confidential {
+          font-size: 8px;
+        }
+        .hero .actions {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+        .hero .actions .text-link {
+          margin-top: 8px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
+        }
+        .reveal.pending {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @media print {
+        @page {
+          size: A4;
+          margin: 16mm;
+        }
+        html {
+          scroll-behavior: auto;
+        }
+        body {
+          font-size: 10px;
+          color: #111;
+          background: #fff;
+        }
+        .container {
+          width: 100%;
+          max-width: none;
+        }
+        .site-header {
+          position: static;
+        }
+        .nav {
+          height: 70px;
+        }
+        .nav-links,
+        .menu-toggle,
+        .hero .actions,
+        .hero-bottom,
+        .investment-foot button,
+        .closing .actions,
+        .acceptance-action,
+        .footer-bottom a,
+        dialog,
+        .skip {
+          display: none !important;
+        }
+        .hero {
+          padding-top: 20px;
+        }
+        .hero-grid {
+          grid-template-columns: 1.5fr 1fr;
+          padding: 30px 0;
+          gap: 25px;
+        }
+        .hero h1 {
+          font-size: 45px;
+        }
+        .cover-art {
+          height: 230px;
+          background: white !important;
+        }
+        .architecture {
+          transform: translate(-50%, -50%) scale(0.65);
+        }
+        .hero-meta {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .hero-meta div:nth-child(3) {
+          grid-column: auto;
+          grid-row: auto;
+        }
+        .section {
+          padding: 35px 0;
+        }
+        .soft,
+        .closing,
+        .first-year,
+        .investment-panel {
+          background: white !important;
+          color: #111 !important;
+        }
+        .section-label {
+          margin-bottom: 20px;
+        }
+        h2 {
+          font-size: 28px;
+        }
+        .split {
+          gap: 30px;
+          grid-template-columns: 1fr 1.7fr;
+        }
+        .section-head {
+          display: block;
+          margin-bottom: 24px;
+        }
+        .section-head p {
+          margin-top: 15px;
+          max-width: none;
+        }
+        .concepts-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
+        }
+        .concept-art {
+          height: 150px;
+          background: white !important;
+          color: #111 !important;
+          border: 1px solid #ccc;
+        }
+        .concept-art::after,
+        .swatches {
+          display: none;
+        }
+        .concept-number {
+          font-size: 65px !important;
+        }
+        .concept-art .art-label {
+          font-size: 6px;
+        }
+        .concept-body h3 {
+          font-size: 16px;
+        }
+        .concept-body p {
+          font-size: 9px;
+          min-height: 0;
+        }
+        .concept-body .tags {
+          display: none;
+        }
+        .demo-url {
+          font-size: 8px;
+        }
+        .workflow {
+          grid-template-columns: repeat(5, 1fr);
+          gap: 15px;
+        }
+        .workflow article:last-child {
+          grid-column: auto;
+        }
+        .workflow h4 {
+          font-size: 10px;
+        }
+        .workflow p {
+          font-size: 9px;
+        }
+        .scope-row {
+          grid-template-columns: 25px 1fr 1.2fr;
+          gap: 20px;
+        }
+        .scope-row .check-list {
+          grid-column: auto;
+        }
+        .scope-title h3 {
+          font-size: 19px;
+        }
+        .investment-panel {
+          padding: 25px;
+          border: 1px solid #bbb;
+          break-inside: avoid;
+        }
+        .investment-panel p,
+        .investment-panel .eyebrow,
+        .investment-panel span,
+        .investment-panel h3 {
+          color: #444 !important;
+        }
+        .investment-breakdown {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+          margin: 25px 0;
+        }
+        .investment-item + .investment-item {
+          padding: 0 0 0 20px;
+          border-top: 0;
+          border-left: 1px solid #ccc;
+        }
+        .investment-item strong {
+          font-size: 24px;
+        }
+        .total {
+          flex-direction: row;
+          align-items: center;
+          border-color: #ccc;
+        }
+        .total-amount strong {
+          font-size: 39px;
+        }
+        .infrastructure-grid,
+        .summary-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 30px;
+        }
+        .infrastructure-details {
+          padding-left: 25px;
+          border-left: 1px solid #ccc;
+          border-top: 0;
+        }
+        .investment-summary {
+          margin-top: 30px;
+          break-inside: avoid;
+        }
+        .first-year {
+          border: 1px solid #ccc;
+        }
+        .deliverables {
+          grid-template-columns: 1fr 1.6fr;
+          gap: 30px;
+        }
+        .four-grid,
+        .process-grid {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+        }
+        .about-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .closing {
+          padding: 35px 0;
+          border-block: 1px solid #ccc;
+        }
+        .closing h2 {
+          font-size: 35px;
+        }
+        .acceptance {
+          grid-template-columns: 1fr 1.4fr;
+          gap: 30px;
+          break-inside: avoid;
+        }
+        .footer-top {
+          flex-direction: row;
+        }
+        .reveal,
+        .reveal.pending {
+          opacity: 1 !important;
+          transform: none !important;
+          animation: none !important;
+          transition: none !important;
+        }
+        .concept-card,
+        .scope-row,
+        .process-step,
+        .principle,
+        .about-grid article {
+          break-inside: avoid;
+        }
+        h2,
+        h3,
+        h4 {
+          break-after: avoid;
+        }
+        .commercial ol {
+          display: grid !important;
+          grid-template-columns: 1fr 1fr;
+        }
+        .commercial {
+          break-inside: avoid;
+        }
+        .commercial summary::after {
+          display: none;
+        }
+      }
+      .print-costs {
+        display: none;
+      }
+      @media print {
+        body > :not(.print-costs) {
+          display: none !important;
+        }
+        .print-costs {
+          display: block;
+          font-family: Arial, sans-serif;
+          font-size: 10pt;
+          line-height: 1.4;
+          color: #17202c;
+        }
+        .print-costs header {
+          display: flex;
+          align-items: center;
+          gap: 18px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #ccd3dc;
+        }
+        .print-costs header img {
+          width: 90px;
+          height: auto;
+          flex-shrink: 0;
+        }
+        .print-costs header strong {
+          font-size: 12pt;
+        }
+        .print-costs header p {
+          font-size: 8pt;
+        }
+        .print-costs h1 {
+          font-size: 25pt;
+          margin: 14px 0 6px;
+        }
+        .print-costs .print-subtitle {
+          font-size: 10pt;
+        }
+        .print-costs dl {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 20px;
+          margin: 12px 0;
+        }
+        .print-costs dt {
+          font-size: 7pt;
+        }
+        .print-costs dd {
+          font-size: 9pt;
+        }
+        .print-costs h2 {
+          font-size: 13pt;
+          letter-spacing: -0.02em;
+          margin: 14px 0 8px;
+        }
+        .print-costs table {
+          width: 100%;
+          border-collapse: collapse;
+          font-size: 9pt;
+        }
+        .print-costs th,
+        .print-costs td {
+          padding: 6px 0;
+          text-align: left;
+          border-bottom: 1px solid #dce1e7;
+        }
+        .print-costs th:last-child,
+        .print-costs td:last-child {
+          text-align: right;
+          white-space: nowrap;
+        }
+        .print-costs thead th {
+          font-size: 8pt;
+          color: #626c79;
+        }
+        .print-costs td small {
+          display: block;
+          color: #626c79;
+          font-size: 7pt;
+        }
+        .print-costs tfoot th,
+        .print-costs tfoot td {
+          font-weight: 700;
+          font-size: 11pt;
+        }
+        .print-costs .print-note {
+          font-size: 8pt;
+          margin-top: 8px;
+        }
+        .print-costs .print-total {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+          border-block: 1px solid #a8b5c5;
+          padding: 12px 0;
+          margin-top: 16px;
+        }
+        .print-costs .print-total strong {
+          font-size: 19pt;
+          white-space: nowrap;
+        }
+        .print-costs .print-total span {
+          font-size: 10pt;
+          font-weight: 600;
+        }
+        .print-costs ul {
+          margin: 10px 0 0;
+          padding-left: 17px;
+          font-size: 8pt;
+          color: #626c79;
+        }
+        .print-costs li {
+          margin: 4px 0;
+        }
+        .print-costs footer {
+          border-top: 1px solid #dce1e7;
+          padding-top: 10px;
+          margin-top: 16px;
+          break-before: avoid;
+          break-inside: avoid;
+          font-size: 7pt;
+          color: #626c79;
+        }
+        .print-costs section,
+        .print-costs table,
+        .print-costs .print-total {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Langsung ke isi proposal</a>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Navigasi proposal">
+        <a
+          class="brand"
+          href="#overview"
+          aria-label="Jaya Digital Konsultan (JDK) — Overview"
+          ><img
+            src="JDK%20LOGO%20TERBARU.png"
+            alt="Jaya Digital Konsultan (JDK)"
+            width="1536"
+            height="1024"
+          /><span class="brand-note"
+            >DIGITAL CONSULTING<br />& TECHNOLOGY DELIVERY</span
+          ></a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Buka navigasi"
+          aria-expanded="false"
+          aria-controls="navigation"
+        >
+          <span></span><span></span>
+        </button>
+        <div class="nav-links" id="navigation">
+          <a href="#overview">Overview</a><a href="#concepts">Concepts</a
+          ><a href="#scope">Scope</a><a href="#investment">Investment</a
+          ><a href="#infrastructure">Infrastructure</a
+          ><a href="#process">Process</a><a href="#about">About JDK</a
+          ><a class="button" href="#investment"
+            >View Investment <span class="arrow" aria-hidden="true">↗</span></a
+          >
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <section
+        class="hero container"
+        id="overview"
+        aria-labelledby="cover-title"
+      >
+        <div class="cover-top">
+          <span class="confidential"
+            ><svg
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <rect x="3" y="7" width="10" height="7" rx="1" />
+              <path d="M5 7V4a3 3 0 0 1 6 0v3" />
+            </svg>
+            Confidential · Commercial Proposal</span
+          ><span class="document-code">HSNCO / WEBSITE DEVELOPMENT / 2026</span>
+        </div>
+        <div class="hero-grid">
+          <div class="reveal">
+            <div class="eyebrow hero-kicker">
+              A considered direction. A clear next step.
+            </div>
+            <h1 id="cover-title">
+              Website<br />Development<br /><span>Proposal.</span>
+            </h1>
+            <p class="subheading">
+              Digital Experience & Website Development for HSNCO
+            </p>
+            <p class="intro">
+              Transforming the selected digital direction into a secure,
+              scalable, and production-ready web experience.
+            </p>
+            <div class="actions">
+              <a class="button" href="#concepts"
+                >Explore the Concepts
+                <span class="arrow" aria-hidden="true">↗</span></a
+              ><a class="text-link" href="#summary"
+                >Discover the approach
+                <span class="arrow" aria-hidden="true">↓</span></a
+              >
+            </div>
+          </div>
+          <div
+            class="cover-art reveal"
+            role="img"
+            aria-label="Ilustrasi tiga lapisan: design direction, development, dan production"
+          >
+            <div class="art-grid"></div>
+            <div class="art-top">
+              <strong>HSNCO</strong><span>Digital evolution / 2026</span>
+            </div>
+            <div class="architecture">
+              <div class="plane one"></div>
+              <div class="plane two"></div>
+              <div class="plane three"></div>
+            </div>
+            <span class="art-side"
+              >Built with purpose. Ready for what’s next.</span
+            >
+            <div class="art-bottom">
+              <span>From concept</span><span>→</span><span>To production</span>
+            </div>
+          </div>
+        </div>
+        <dl class="hero-meta">
+          <div>
+            <dt>Prepared for</dt>
+            <dd>HSNCO</dd>
+          </div>
+          <div>
+            <dt>Project</dt>
+            <dd>Corporate Website Development</dd>
+          </div>
+          <div>
+            <dt>Prepared by</dt>
+            <dd>Jaya Digital Konsultan (JDK)</dd>
+          </div>
+          <div>
+            <dt>Brand</dt>
+            <dd>JDK</dd>
+          </div>
+          <div>
+            <dt>Year</dt>
+            <dd>2026</dd>
+          </div>
+        </dl>
+        <div class="hero-bottom">
+          <span>A shared vision for HSNCO’s digital presence.</span
+          ><a href="#summary"
+            >Scroll to explore
+            <span class="arrow" aria-hidden="true">↓</span></a
+          >
+        </div>
+      </section>
+      <section
+        class="section container"
+        id="summary"
+        aria-labelledby="summary-title"
+      >
+        <div class="split reveal">
+          <div>
+            <div class="eyebrow section-label"><span>01</span> Overview</div>
+            <h2 id="summary-title">Executive<br />Summary.</h2>
+          </div>
+          <div class="summary-copy">
+            <p class="lead">
+              Arah visual telah dieksplorasi.<br />Saatnya membangun fondasi
+              digital HSNCO.
+            </p>
+            <p>
+              Fase eksplorasi UI/UX telah menghasilkan tiga alternatif prototype
+              untuk memberikan gambaran konkret mengenai arah visual website
+              HSNCO. Setiap konsep membawa pendekatan berbeda dengan tujuan yang
+              sama: menghadirkan identitas digital yang profesional dan
+              terpercaya.
+            </p>
+            <p>
+              Tahap berikutnya adalah mengubah design direction yang dipilih
+              menjadi website production-ready melalui frontend development,
+              backend development, dan quality assurance yang terstruktur.
+            </p>
+            <p>
+              Jaya Digital Konsultan mendampingi implementasi dari finalisasi
+              desain hingga production deployment, untuk menghasilkan corporate
+              website yang responsive, maintainable, dan scalable serta siap
+              mendukung digital presence HSNCO.
+            </p>
+            <div class="summary-points">
+              <span>Design-aligned</span><span>Quality-driven</span
+              ><span>Production-ready</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section soft"
+        id="concepts"
+        aria-labelledby="concepts-title"
+      >
+        <div class="container">
+          <div class="eyebrow section-label">
+            <span>02</span> Design Exploration
+          </div>
+          <div class="section-head reveal">
+            <h2 id="concepts-title">Three directions.<br />One objective.</h2>
+            <p>
+              Three design directions have been developed to explore different
+              interpretations of HSNCO’s digital identity. The selected
+              direction will become the foundation of the production website.
+            </p>
+          </div>
+          <div class="concepts-grid">
+            <article class="concept-card reveal">
+              <div class="concept-art concept-one" aria-hidden="true">
+                <span class="art-label">Navy / Gold / Refined</span
+                ><span class="concept-number">01</span>
+                <div class="swatches">
+                  <i style="background: #0b132b"></i
+                  ><i style="background: #c6a15b"></i
+                  ><i style="background: #f3f0e9"></i>
+                </div>
+              </div>
+              <div class="concept-caption">
+                Interpretasi palet visual · bukan screenshot prototype
+              </div>
+              <div class="concept-body">
+                <div class="eyebrow">Concept 01 · Design Direction</div>
+                <h3>Classic Authority</h3>
+                <p>
+                  Navy yang mendalam, aksen gold, dan tipografi serif. Komposisi
+                  berlapis menghadirkan karakter formal dan berwibawa.
+                </p>
+                <div class="tags">
+                  <span>Deep navy</span><span>Serif typography</span
+                  ><span>Layered composition</span>
+                </div>
+                <a
+                  class="demo-link"
+                  href="https://ryanwyjaya.github.io/hsnco-demo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Live Demo — Concept 01 (tab baru)"
+                  >View Live Demo
+                  <span class="arrow" aria-hidden="true">↗</span></a
+                >
+                <div class="demo-url">ryanwyjaya.github.io/hsnco-demo/</div>
+              </div>
+            </article>
+            <article class="concept-card reveal">
+              <div class="concept-art concept-two" aria-hidden="true">
+                <span class="art-label">Monochrome / Immersive</span
+                ><span class="concept-number">02</span>
+                <div class="swatches">
+                  <i style="background: #111113"></i
+                  ><i style="background: #b89a5c"></i
+                  ><i style="background: #e8e8e6"></i>
+                </div>
+              </div>
+              <div class="concept-caption">
+                Interpretasi palet visual · bukan screenshot prototype
+              </div>
+              <div class="concept-body">
+                <div class="eyebrow">Concept 02 · Design Direction</div>
+                <h3>Bold Perspective</h3>
+                <p>
+                  Fotografi layar penuh, palet monokrom, dan kontras yang kuat.
+                  Pendekatan imersif dengan ritme visual yang tegas.
+                </p>
+                <div class="tags">
+                  <span>Monochrome</span><span>Full-screen imagery</span
+                  ><span>Bold contrast</span>
+                </div>
+                <a
+                  class="demo-link"
+                  href="https://ryanwyjaya.github.io/hsnco-demo-2/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Live Demo — Concept 02 (tab baru)"
+                  >View Live Demo
+                  <span class="arrow" aria-hidden="true">↗</span></a
+                >
+                <div class="demo-url">ryanwyjaya.github.io/hsnco-demo-2/</div>
+              </div>
+            </article>
+            <article class="concept-card reveal">
+              <div class="concept-art concept-three" aria-hidden="true">
+                <span class="art-label">Editorial / Structured / Elegant</span
+                ><span class="concept-number">03</span>
+                <div class="swatches">
+                  <i style="background: #080808"></i
+                  ><i style="background: #b89a5a"></i
+                  ><i style="background: #f2f0eb"></i>
+                </div>
+              </div>
+              <div class="concept-caption">
+                Interpretasi palet visual · bukan screenshot prototype
+              </div>
+              <div class="concept-body">
+                <div class="eyebrow">Concept 03 · Design Direction</div>
+                <h3>Editorial Elegance</h3>
+                <p>
+                  Split hero, serif ekspresif, serta perpaduan charcoal dan
+                  ivory. Struktur multi-page memberi ruang bagi kedalaman
+                  informasi.
+                </p>
+                <div class="tags">
+                  <span>Split composition</span><span>Editorial layout</span
+                  ><span>Multi-page</span>
+                </div>
+                <a
+                  class="demo-link"
+                  href="https://ryanwyjaya.github.io/hsnco-demo-3/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Live Demo — Concept 03 (tab baru)"
+                  >View Live Demo
+                  <span class="arrow" aria-hidden="true">↗</span></a
+                >
+                <div class="demo-url">ryanwyjaya.github.io/hsnco-demo-3/</div>
+              </div>
+            </article>
+          </div>
+          <div class="concept-note">
+            <span class="arrow" aria-hidden="true">↳</span
+            ><span
+              ><b>Your direction, our foundation.</b> Konsep terpilih akan
+              difinalisasi bersama HSNCO sebelum masuk ke tahap
+              development.</span
+            >
+          </div>
+          <div class="transition reveal">
+            <h3>From Design to Production</h3>
+            <div class="workflow">
+              <article>
+                <span class="step-number">01</span>
+                <h4>UI Direction</h4>
+                <p>
+                  Finalisasi arah visual berdasarkan prototype yang disetujui
+                  client.
+                </p>
+              </article>
+              <article>
+                <span class="step-number">02</span>
+                <h4>Frontend Development</h4>
+                <p>
+                  Responsive interface dengan perhatian pada detail visual,
+                  interaction, accessibility, dan performance.
+                </p>
+              </article>
+              <article>
+                <span class="step-number">03</span>
+                <h4>Backend Development</h4>
+                <p>
+                  Application logic, content/data management, integration,
+                  security, dan komponen server-side.
+                </p>
+              </article>
+              <article>
+                <span class="step-number">04</span>
+                <h4>Quality Assurance</h4>
+                <p>
+                  Functional, cross-browser, responsive, regression, dan
+                  automation testing apabila relevan.
+                </p>
+              </article>
+              <article>
+                <span class="step-number">05</span>
+                <h4>Production Deployment</h4>
+                <p>
+                  Persiapan production environment dan pendampingan proses
+                  deployment.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section container"
+        id="scope"
+        aria-labelledby="scope-title"
+      >
+        <div class="eyebrow section-label">
+          <span>03</span> Scope of Engagement
+        </div>
+        <div class="section-head reveal">
+          <h2 id="scope-title">
+            A complete foundation.<br />Precisely delivered.
+          </h2>
+          <p>
+            Tiga disiplin yang saling terhubung untuk mengubah konsep menjadi
+            website yang berfungsi, teruji, dan siap digunakan.
+          </p>
+        </div>
+        <article class="scope-row reveal">
+          <span class="scope-index">01 /</span>
+          <div class="scope-title">
+            <h3>Frontend Development</h3>
+            <p>
+              Implementation of the selected UI direction into a responsive,
+              performance-oriented, and production-ready website.
+            </p>
+            <span class="scope-price">Investment: Rp6.000.000</span>
+          </div>
+          <ul class="check-list">
+            <li>Responsive implementation</li>
+            <li>UI interaction</li>
+            <li>Cross-device compatibility</li>
+            <li>Frontend optimization</li>
+            <li>Backend integration</li>
+            <li>Production preparation</li>
+          </ul>
+        </article>
+        <article class="scope-row reveal">
+          <span class="scope-index">02 /</span>
+          <div class="scope-title">
+            <h3>Backend Development</h3>
+            <p>
+              Development of the server-side foundation required to operate and
+              manage the website reliably.
+            </p>
+            <span class="scope-price">Investment: Rp6.000.000</span>
+          </div>
+          <ul class="check-list">
+            <li>Backend architecture</li>
+            <li>Data/content management</li>
+            <li>Application logic</li>
+            <li>Integration layer</li>
+            <li>Security implementation</li>
+            <li>Production configuration</li>
+          </ul>
+        </article>
+        <article class="scope-row reveal">
+          <span class="scope-index">03 /</span>
+          <div class="scope-title">
+            <h3>Quality Assurance</h3>
+            <p>
+              Structured validation to ensure the website performs consistently
+              before production release.
+            </p>
+            <span class="scope-price">Investment: Rp5.000.000</span>
+          </div>
+          <ul class="check-list">
+            <li>Functional testing</li>
+            <li>Responsive testing</li>
+            <li>Browser compatibility</li>
+            <li>Regression testing</li>
+            <li>Manual testing</li>
+            <li>Automation testing where applicable</li>
+            <li>Pre-release validation</li>
+          </ul>
+        </article>
+        <div class="deliverables reveal">
+          <div>
+            <h3>What You Receive</h3>
+            <p>
+              A complete digital implementation process managed by Jaya Digital
+              Konsultan from selected design direction through production
+              preparation.
+            </p>
+          </div>
+          <ul class="check-list">
+            <li>Selected UI concept implementation</li>
+            <li>Responsive frontend development</li>
+            <li>Backend development</li>
+            <li>Frontend–backend integration</li>
+            <li>Functional quality assurance</li>
+            <li>Manual testing</li>
+            <li>Automation testing where applicable</li>
+            <li>Cross-browser validation</li>
+            <li>Responsive validation</li>
+            <li>Production preparation</li>
+            <li>Source code project</li>
+            <li>Deployment assistance</li>
+          </ul>
+        </div>
+        <div class="principles reveal">
+          <h3>Built Beyond Visuals</h3>
+          <div class="four-grid">
+            <article class="principle">
+              <div class="symbol" aria-hidden="true">↗</div>
+              <h4>Performance</h4>
+              <p>
+                Website dikembangkan dengan perhatian terhadap loading
+                performance dan frontend efficiency.
+              </p>
+            </article>
+            <article class="principle">
+              <div class="symbol" aria-hidden="true">✓</div>
+              <h4>Reliability</h4>
+              <p>
+                Implementasi divalidasi melalui quality assurance sebelum
+                production release.
+              </p>
+            </article>
+            <article class="principle">
+              <div class="symbol" aria-hidden="true">◇</div>
+              <h4>Security</h4>
+              <p>
+                Backend dan deployment mengikuti praktik keamanan aplikasi web
+                yang relevan.
+              </p>
+            </article>
+            <article class="principle">
+              <div class="symbol" aria-hidden="true">⊞</div>
+              <h4>Maintainability</h4>
+              <p>
+                Struktur kode dipersiapkan agar mudah dipelihara dan
+                dikembangkan untuk kebutuhan berikutnya.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section
+        class="container"
+        id="investment"
+        aria-labelledby="investment-title"
+      >
+        <div class="eyebrow section-label"><span>04</span> Investment</div>
+        <div class="investment-panel reveal">
+          <div class="eyebrow">Clarity in scope. Confidence in investment.</div>
+          <h2 id="investment-title">Project Investment</h2>
+          <p>
+            Investment required to transform the selected design direction into
+            a production-ready digital platform.
+          </p>
+          <div class="investment-breakdown">
+            <div class="investment-item">
+              <h3>Frontend Development</h3>
+              <strong>Rp6.000.000</strong>
+              <p>Design Implementation & Client-Side Development</p>
+            </div>
+            <div class="investment-item">
+              <h3>Backend Development</h3>
+              <strong>Rp6.000.000</strong>
+              <p>Application & Server-Side Development</p>
+            </div>
+            <div class="investment-item">
+              <h3>Quality Assurance</h3>
+              <strong>Rp5.000.000</strong>
+              <p>Manual & Automation Testing</p>
+            </div>
+          </div>
+          <div class="total">
+            <div>
+              <div class="eyebrow">Total Development Investment</div>
+              <p>One integrated development engagement.</p>
+            </div>
+            <div class="total-amount">
+              <strong>Rp17.000.000</strong><span>Tujuh Belas Juta Rupiah</span>
+            </div>
+          </div>
+        </div>
+        <div class="investment-foot">
+          <span
+            >Professional website development delivered by Jaya Digital
+            Konsultan.</span
+          ><span>Optional infrastructure is quoted separately.</span
+          ><button type="button" id="print-proposal">
+            Print / Save as PDF <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </section>
+      <section
+        class="section container"
+        id="infrastructure"
+        aria-labelledby="infrastructure-title"
+      >
+        <div class="eyebrow section-label"><span>05</span> Infrastructure</div>
+        <div class="section-head">
+          <h2 id="infrastructure-title">Optional Infrastructure</h2>
+          <p>
+            Infrastruktur disesuaikan dengan kebutuhan deployment HSNCO. Biaya
+            ini opsional dan tidak termasuk development investment Rp17.000.000.
+          </p>
+        </div>
+        <div class="infrastructure-grid reveal">
+          <div>
+            <span class="optional-badge">Optional · Annual Investment</span>
+            <h3>VPS / Production Hosting</h3>
+            <div class="hosting-price">± Rp6.000.000 <small>/ year</small></div>
+            <p>
+              Production VPS environment untuk menjalankan website dengan
+              resource yang dapat disesuaikan berdasarkan kebutuhan aplikasi dan
+              traffic.
+            </p>
+          </div>
+          <div class="infrastructure-details">
+            <div class="eyebrow">A foundation for production</div>
+            <ul class="check-list">
+              <li>Dedicated server resources</li>
+              <li>SSL deployment</li>
+              <li>Backup capability</li>
+              <li>Server environment configuration</li>
+              <li>Scalable infrastructure</li>
+              <li>Production-ready environment</li>
+            </ul>
+            <p class="note">
+              Infrastructure cost is estimated and subject to the selected VPS
+              specification and provider pricing at the time of purchase.
+            </p>
+          </div>
+        </div>
+        <div class="investment-summary reveal">
+          <h3>Investment Summary</h3>
+          <div class="summary-grid">
+            <table class="cost-table">
+              <caption>
+                Development Investment
+              </caption>
+              <tbody>
+                <tr>
+                  <th scope="row">Frontend Development</th>
+                  <td>Rp6.000.000</td>
+                </tr>
+                <tr>
+                  <th scope="row">Backend Development</th>
+                  <td>Rp6.000.000</td>
+                </tr>
+                <tr>
+                  <th scope="row">Quality Assurance</th>
+                  <td>Rp5.000.000</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th scope="row">Development Total</th>
+                  <td>Rp17.000.000</td>
+                </tr>
+              </tfoot>
+            </table>
+            <div class="first-year">
+              <div class="optional-line">
+                <span
+                  >Optional Infrastructure<br />VPS / Production Hosting</span
+                ><span>± Rp6.000.000 / year</span>
+              </div>
+              <h4>Estimated First-Year Investment</h4>
+              <strong>± Rp23.000.000</strong>
+              <p>
+                Development Rp17.000.000 + optional infrastructure approximately
+                Rp6.000.000/year.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section soft"
+        id="process"
+        aria-labelledby="process-title"
+      >
+        <div class="container">
+          <div class="eyebrow section-label">
+            <span>06</span> Development Approach
+          </div>
+          <div class="section-head reveal">
+            <h2 id="process-title">Our Development<br />Approach.</h2>
+            <p>
+              A structured delivery process by Jaya Digital Konsultan.<br />Setiap
+              tahap memiliki tujuan yang jelas untuk menjaga keselarasan,
+              kualitas, dan kesiapan implementasi.
+            </p>
+          </div>
+          <div class="process-grid reveal">
+            <article class="process-step">
+              <div class="step-top">
+                <span>01</span><span aria-hidden="true">→</span>
+              </div>
+              <h3>Align</h3>
+              <p>
+                Menentukan design direction dan requirement final bersama HSNCO.
+              </p>
+            </article>
+            <article class="process-step">
+              <div class="step-top">
+                <span>02</span><span aria-hidden="true">→</span>
+              </div>
+              <h3>Develop</h3>
+              <p>
+                Frontend dan backend implementation sebagai satu proses
+                pengembangan yang terintegrasi.
+              </p>
+            </article>
+            <article class="process-step">
+              <div class="step-top">
+                <span>03</span><span aria-hidden="true">→</span>
+              </div>
+              <h3>Validate</h3>
+              <p>
+                Quality assurance, testing, revision, dan stabilization sebelum
+                rilis.
+              </p>
+            </article>
+            <article class="process-step">
+              <div class="step-top">
+                <span>04</span><span aria-hidden="true">↗</span>
+              </div>
+              <h3>Deploy</h3>
+              <p>Production preparation dan pendampingan deployment website.</p>
+            </article>
+          </div>
+          <div class="timeline">
+            <svg
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <circle cx="10" cy="10" r="8" />
+              <path d="M10 5v5l3 2" /></svg
+            ><span
+              ><b>Timeline:</b> To be aligned following final scope
+              approval.</span
+            >
+          </div>
+        </div>
+      </section>
+      <section
+        class="section container"
+        id="about"
+        aria-labelledby="about-title"
+      >
+        <div class="split reveal">
+          <div>
+            <div class="eyebrow section-label"><span>07</span> About JDK</div>
+            <h2 id="about-title">
+              Technology Delivery<br />with a Consulting<br />Mindset.
+            </h2>
+          </div>
+          <div class="about-copy">
+            <div
+              class="eyebrow"
+              style="color: var(--blue); margin-bottom: 18px"
+            >
+              Why Jaya Digital Konsultan
+            </div>
+            <p>
+              Jaya Digital Konsultan berfokus pada bagaimana solusi digital
+              dapat diimplementasikan secara terstruktur, digunakan dengan baik,
+              memiliki kualitas teknis yang memadai, dan dikembangkan untuk
+              kebutuhan berikutnya.
+            </p>
+            <div class="about-grid">
+              <article>
+                <h3>Design-to-Development Alignment</h3>
+                <p>
+                  Menjaga konsistensi antara design direction yang disepakati
+                  dan hasil implementasi.
+                </p>
+              </article>
+              <article>
+                <h3>Structured Development</h3>
+                <p>
+                  Frontend dan backend dikerjakan sebagai satu kesatuan delivery
+                  process.
+                </p>
+              </article>
+              <article>
+                <h3>Quality-Oriented</h3>
+                <p>
+                  Quality assurance menjadi bagian dari proses, termasuk selama
+                  pengembangan.
+                </p>
+              </article>
+              <article>
+                <h3>Sustainable Implementation</h3>
+                <p>
+                  Solusi mempertimbangkan maintainability dan kebutuhan
+                  pengembangan selanjutnya.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+        <details class="commercial" open>
+          <summary>Commercial Notes</summary>
+          <ol>
+            <li>Development investment: <strong>Rp17.000.000.</strong></li>
+            <li>
+              VPS/infrastructure bersifat optional dan terpisah dari biaya
+              development.
+            </li>
+            <li>
+              Harga infrastructure mengikuti spesifikasi dan harga provider
+              ketika dilakukan pembelian.
+            </li>
+            <li>
+              Fitur atau pekerjaan di luar scope akan dibahas sebagai additional
+              scope.
+            </li>
+            <li>
+              Timeline final ditentukan setelah scope dan design direction
+              disetujui.
+            </li>
+            <li>
+              Proposal dapat disesuaikan berdasarkan requirement final HSNCO.
+            </li>
+          </ol>
+        </details>
+      </section>
+      <section class="closing" aria-labelledby="closing-title">
+        <div class="reveal">
+          <div class="eyebrow">The next chapter starts here</div>
+          <h2 id="closing-title">
+            Ready to Move from<br />Concept to Production.
+          </h2>
+          <p>
+            With the design direction established, the next step is transforming
+            the selected experience into a reliable production platform for
+            HSNCO.
+          </p>
+          <p>
+            Jaya Digital Konsultan is ready to support HSNCO through the
+            development, validation, and production implementation process.
+          </p>
+          <div class="actions">
+            <a class="button" href="#acceptance"
+              >Approve & Proceed
+              <span class="arrow" aria-hidden="true">↗</span></a
+            ><a class="button secondary" href="#concepts"
+              >Review Design Concepts
+              <span class="arrow" aria-hidden="true">↑</span></a
+            >
+          </div>
+        </div>
+      </section>
+      <section
+        class="section container"
+        id="acceptance"
+        aria-labelledby="acceptance-title"
+      >
+        <div class="acceptance reveal">
+          <div class="acceptance-intro">
+            <div class="eyebrow section-label"><span>08</span> Approval</div>
+            <h2 id="acceptance-title">Proposal Acceptance</h2>
+            <p>
+              Langkah awal menuju implementasi. Konfirmasi scope dan design
+              direction bersama tim kami untuk memulai proses persetujuan
+              formal.
+            </p>
+          </div>
+          <div>
+            <dl class="acceptance-data">
+              <div>
+                <dt>Client</dt>
+                <dd>HSNCO</dd>
+              </div>
+              <div>
+                <dt>Project</dt>
+                <dd>Corporate Website Development</dd>
+              </div>
+              <div>
+                <dt>Prepared by</dt>
+                <dd>Jaya Digital Konsultan</dd>
+              </div>
+              <div>
+                <dt>Status</dt>
+                <dd><span class="status">Awaiting Approval</span></dd>
+              </div>
+              <div>
+                <dt>Development Investment</dt>
+                <dd>Rp17.000.000</dd>
+              </div>
+              <div>
+                <dt>Optional Infrastructure</dt>
+                <dd>± Rp6.000.000 / year</dd>
+              </div>
+            </dl>
+            <div class="acceptance-action">
+              <p>
+                Persetujuan formal dan project initiation dikoordinasikan
+                bersama tim Jaya Digital Konsultan.
+              </p>
+              <button class="button" type="button" id="proceed">
+                Proceed with Project
+                <span class="arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <article
+      class="print-costs"
+      aria-label="Rincian biaya pengembangan website HSNCO"
+    >
+      <header>
+        <img
+          src="JDK%20LOGO%20TERBARU.png"
+          alt="Logo Jaya Digital Konsultan"
+          width="1536"
+          height="1024"
+        />
+        <div>
+          <strong>Jaya Digital Konsultan (JDK)</strong>
+          <p>Digital Consulting & Software Development</p>
+        </div>
+      </header>
+      <h1>Rincian Biaya Project</h1>
+      <p class="print-subtitle">Corporate Website Development — HSNCO</p>
+      <dl>
+        <div>
+          <dt>Prepared for</dt>
+          <dd>HSNCO</dd>
+        </div>
+        <div>
+          <dt>Prepared by</dt>
+          <dd>Jaya Digital Konsultan</dd>
+        </div>
+        <div>
+          <dt>Year</dt>
+          <dd>2026</dd>
+        </div>
+      </dl>
+      <section>
+        <h2>Development Investment</h2>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Komponen Pekerjaan</th>
+              <th scope="col">Investment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Frontend Development<small
+                  >Design Implementation & Client-Side Development</small
+                >
+              </td>
+              <td>Rp6.000.000</td>
+            </tr>
+            <tr>
+              <td>
+                Backend Development<small
+                  >Application & Server-Side Development</small
+                >
+              </td>
+              <td>Rp6.000.000</td>
+            </tr>
+            <tr>
+              <td>
+                Quality Assurance<small
+                  >Manual & Automation Testing where applicable</small
+                >
+              </td>
+              <td>Rp5.000.000</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">Total Development Investment</th>
+              <td>Rp17.000.000</td>
+            </tr>
+          </tfoot>
+        </table>
+        <p class="print-note">
+          Tujuh Belas Juta Rupiah. Tidak termasuk optional infrastructure.
+        </p>
+      </section>
+      <section>
+        <h2>Optional Infrastructure</h2>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                VPS / Production Hosting<small
+                  >Estimasi biaya infrastruktur per tahun · opsional</small
+                >
+              </td>
+              <td>± Rp6.000.000 / tahun</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="print-note">
+          Biaya mengikuti spesifikasi VPS dan harga provider pada saat
+          pembelian.
+        </p>
+      </section>
+      <section>
+        <div class="print-total">
+          <span
+            >Estimated First-Year Investment<br /><small
+              >Development + optional VPS</small
+            ></span
+          ><strong>± Rp23.000.000</strong>
+        </div>
+        <p class="print-note">
+          Development Rp17.000.000 + optional infrastructure ±
+          Rp6.000.000/tahun.
+        </p>
+      </section>
+      <section>
+        <h2>Catatan Biaya</h2>
+        <ul>
+          <li>
+            Development investment sebesar Rp17.000.000; VPS bersifat opsional
+            dan dihitung terpisah.
+          </li>
+          <li>
+            Estimasi tahun pertama sebesar ± Rp23.000.000 berlaku jika
+            menggunakan opsi VPS.
+          </li>
+          <li>
+            Fitur atau pekerjaan di luar scope akan dibahas sebagai additional
+            scope.
+          </li>
+          <li>
+            Proposal dapat disesuaikan berdasarkan requirement final HSNCO.
+          </li>
+          <li>
+            Nilai investasi terbuka untuk didiskusikan dan dinegosiasikan dengan
+            mempertimbangkan ruang lingkup pekerjaan serta kebutuhan final HSNCO.
+            Penyesuaian ditetapkan berdasarkan kesepakatan bersama.
+          </li>
+        </ul>
+      </section>
+      <footer>
+        Confidential · Commercial Proposal · © 2026 Jaya Digital Konsultan. All
+        Rights Reserved.
+      </footer>
+    </article>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <img
+              src="JDK%20LOGO%20TERBARU.png"
+              alt="Logo Jaya Digital Konsultan"
+              width="1536"
+              height="1024"
+            />
+            <div>
+              <strong>Jaya Digital Konsultan</strong>
+              <p>Digital Consulting & Software Development</p>
+            </div>
+          </div>
+          <div class="footer-note">
+            JDK / PREPARED EXCLUSIVELY FOR HSNCO<br />Confidential · Commercial
+            Proposal
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Jaya Digital Konsultan. All Rights Reserved.</span
+          ><a href="#overview">Back to overview ↑</a>
+        </div>
+      </div>
+    </footer>
+    <dialog
+      id="approval-dialog"
+      aria-labelledby="dialog-title"
+      aria-describedby="dialog-description"
+    >
+      <div class="eyebrow">HSNCO × Jaya Digital Konsultan</div>
+      <h2 id="dialog-title">Let’s take the next step.</h2>
+      <p id="dialog-description">
+        Thank you for considering Jaya Digital Konsultan. Please contact our
+        team to proceed with formal project approval and project initiation.
+      </p>
+      <form method="dialog">
+        <button class="button" autofocus>
+          Close <span class="arrow" aria-hidden="true">×</span>
+        </button>
+      </form>
+    </dialog>
+    <script>
+      "use strict";
+      const toggle = document.querySelector(".menu-toggle");
+      const navigation = document.querySelector("#navigation");
+      function closeMenu(returnFocus = false) {
+        navigation.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Buka navigasi");
+        if (returnFocus) toggle.focus();
+      }
+      toggle.addEventListener("click", () => {
+        const open = toggle.getAttribute("aria-expanded") !== "true";
+        navigation.classList.toggle("open", open);
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.setAttribute(
+          "aria-label",
+          open ? "Tutup navigasi" : "Buka navigasi",
+        );
+      });
+      navigation
+        .querySelectorAll("a")
+        .forEach((link) => link.addEventListener("click", () => closeMenu()));
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && navigation.classList.contains("open"))
+          closeMenu(true);
+      });
+      document.addEventListener("click", (event) => {
+        if (!event.target.closest(".site-header")) closeMenu();
+      });
+      const desktop = window.matchMedia("(min-width: 961px)");
+      desktop.addEventListener("change", () => closeMenu());
+      const approvalDialog = document.querySelector("#approval-dialog");
+      document
+        .querySelector("#proceed")
+        .addEventListener("click", () => approvalDialog.showModal());
+      approvalDialog.addEventListener("click", (event) => {
+        const rect = approvalDialog.getBoundingClientRect();
+        if (
+          event.target === approvalDialog &&
+          (event.clientX < rect.left ||
+            event.clientX > rect.right ||
+            event.clientY < rect.top ||
+            event.clientY > rect.bottom)
+        )
+          approvalDialog.close();
+      });
+      document
+        .querySelector("#print-proposal")
+        .addEventListener("click", () => window.print());
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      );
+      if ("IntersectionObserver" in window) {
+        if (!reducedMotion.matches) {
+          const revealObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.remove("pending");
+                  entry.target.classList.add("visible");
+                  revealObserver.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.05 },
+          );
+          document.querySelectorAll(".reveal").forEach((element) => {
+            if (element.getBoundingClientRect().top > window.innerHeight) {
+              element.classList.add("pending");
+              revealObserver.observe(element);
+            }
+          });
+        }
+        const sectionObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              navigation.querySelectorAll("a:not(.button)").forEach((link) => {
+                if (link.hash === "#" + entry.target.id)
+                  link.setAttribute("aria-current", "location");
+                else link.removeAttribute("aria-current");
+              });
+            });
+          },
+          { rootMargin: "-15% 0px -60% 0px", threshold: 0 },
+        );
+        [
+          "overview",
+          "concepts",
+          "scope",
+          "investment",
+          "infrastructure",
+          "process",
+          "about",
+        ].forEach((id) => sectionObserver.observe(document.getElementById(id)));
+      }
+    </script>
+  </body>
+</html>
