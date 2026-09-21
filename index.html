@@ -2080,6 +2080,19 @@
           break-inside: avoid;
         }
       }
+    .previous-price { display:block; font-size:10px; margin-top:12px; color:#c4d0df; }
+      .negotiation-note { border:1px solid #ffffff40; padding:14px 18px; margin-top:24px; font-size:11px; }
+      .negotiation-note p { color:#d2dbe7; font-size:11px; margin-top:5px; }
+      .cost-table del { color:var(--muted); font-size:10px; }
+      .workflow { grid-template-columns:repeat(4,1fr); }
+      @media(max-width:700px) { .workflow {grid-template-columns:1fr 1fr;} .workflow article:last-child {grid-column:auto;} }
+      @media print { .print-costs td del { color:#626c79; font-size:8pt; } }
+      @media (max-width: 380px) {
+        .cost-table { table-layout: fixed; }
+        .cost-table th { width: 54%; overflow-wrap: anywhere; padding-right: 10px; }
+        .cost-table td { width: 46%; }
+        .cost-table tfoot th, .cost-table tfoot td { font-size: 12px; }
+      }
     </style>
   </head>
   <body>
@@ -2241,7 +2254,7 @@
             <p>
               Tahap berikutnya adalah mengubah design direction yang dipilih
               menjadi website production-ready melalui frontend development,
-              backend development, dan quality assurance yang terstruktur.
+              backend development yang terstruktur.
             </p>
             <p>
               Jaya Digital Konsultan mendampingi implementasi dari finalisasi
@@ -2419,16 +2432,9 @@
                   security, dan komponen server-side.
                 </p>
               </article>
+              
               <article>
                 <span class="step-number">04</span>
-                <h4>Quality Assurance</h4>
-                <p>
-                  Functional, cross-browser, responsive, regression, dan
-                  automation testing apabila relevan.
-                </p>
-              </article>
-              <article>
-                <span class="step-number">05</span>
                 <h4>Production Deployment</h4>
                 <p>
                   Persiapan production environment dan pendampingan proses
@@ -2452,7 +2458,7 @@
             A complete foundation.<br />Precisely delivered.
           </h2>
           <p>
-            Tiga disiplin yang saling terhubung untuk mengubah konsep menjadi
+            Frontend dan backend yang saling terhubung untuk mengubah konsep menjadi
             website yang berfungsi, teruji, dan siap digunakan.
           </p>
         </div>
@@ -2464,7 +2470,7 @@
               Implementation of the selected UI direction into a responsive,
               performance-oriented, and production-ready website.
             </p>
-            <span class="scope-price">Investment: Rp6.000.000</span>
+            <span class="scope-price"><del>Rp6.000.000</del> &rarr; <b>Rp4.500.000</b><br>Investment disepakati setelah negosiasi</span>
           </div>
           <ul class="check-list">
             <li>Responsive implementation</li>
@@ -2483,7 +2489,7 @@
               Development of the server-side foundation required to operate and
               manage the website reliably.
             </p>
-            <span class="scope-price">Investment: Rp6.000.000</span>
+            <span class="scope-price"><del>Rp6.000.000</del> &rarr; <b>Rp4.500.000</b><br>Investment disepakati setelah negosiasi</span>
           </div>
           <ul class="check-list">
             <li>Backend architecture</li>
@@ -2494,26 +2500,7 @@
             <li>Production configuration</li>
           </ul>
         </article>
-        <article class="scope-row reveal">
-          <span class="scope-index">03 /</span>
-          <div class="scope-title">
-            <h3>Quality Assurance</h3>
-            <p>
-              Structured validation to ensure the website performs consistently
-              before production release.
-            </p>
-            <span class="scope-price">Investment: Rp5.000.000</span>
-          </div>
-          <ul class="check-list">
-            <li>Functional testing</li>
-            <li>Responsive testing</li>
-            <li>Browser compatibility</li>
-            <li>Regression testing</li>
-            <li>Manual testing</li>
-            <li>Automation testing where applicable</li>
-            <li>Pre-release validation</li>
-          </ul>
-        </article>
+        
         <div class="deliverables reveal">
           <div>
             <h3>What You Receive</h3>
@@ -2528,11 +2515,6 @@
             <li>Responsive frontend development</li>
             <li>Backend development</li>
             <li>Frontend–backend integration</li>
-            <li>Functional quality assurance</li>
-            <li>Manual testing</li>
-            <li>Automation testing where applicable</li>
-            <li>Cross-browser validation</li>
-            <li>Responsive validation</li>
             <li>Production preparation</li>
             <li>Source code project</li>
             <li>Deployment assistance</li>
@@ -2553,7 +2535,7 @@
               <div class="symbol" aria-hidden="true">✓</div>
               <h4>Reliability</h4>
               <p>
-                Implementasi divalidasi melalui quality assurance sebelum
+                Implementasi ditinjau bersama sebelum
                 production release.
               </p>
             </article>
@@ -2589,30 +2571,27 @@
             Investment required to transform the selected design direction into
             a production-ready digital platform.
           </p>
-          <div class="investment-breakdown">
+          <div class="negotiation-note"><b>Hasil Negosiasi &middot; Harga Development Disepakati</b><p>Frontend + backend: <del>Rp12.000.000</del> &rarr; <strong>Rp9.000.000</strong>.<br>Penyesuaian harga Rp3.000.000 untuk kedua komponen development.</p></div>
+<div class="investment-breakdown">
             <div class="investment-item">
               <h3>Frontend Development</h3>
-              <strong>Rp6.000.000</strong>
+              <span class="previous-price">Harga awal <del>Rp6.000.000</del></span><strong>Rp4.500.000</strong><p>Disepakati setelah negosiasi</p>
               <p>Design Implementation & Client-Side Development</p>
             </div>
             <div class="investment-item">
               <h3>Backend Development</h3>
-              <strong>Rp6.000.000</strong>
+              <span class="previous-price">Harga awal <del>Rp6.000.000</del></span><strong>Rp4.500.000</strong><p>Disepakati setelah negosiasi</p>
               <p>Application & Server-Side Development</p>
             </div>
-            <div class="investment-item">
-              <h3>Quality Assurance</h3>
-              <strong>Rp5.000.000</strong>
-              <p>Manual & Automation Testing</p>
-            </div>
+            <div class="investment-item"><h3>VPS / Production Hosting</h3><strong>&plusmn; Rp6.000.000</strong><p>Estimasi infrastructure / tahun</p></div>
           </div>
           <div class="total">
             <div>
-              <div class="eyebrow">Total Development Investment</div>
-              <p>One integrated development engagement.</p>
+              <div class="eyebrow">Total Project Investment</div>
+              <p>Frontend, backend, dan VPS tahun pertama.</p>
             </div>
             <div class="total-amount">
-              <strong>Rp17.000.000</strong><span>Tujuh Belas Juta Rupiah</span>
+              <strong>&plusmn; Rp15.000.000</strong><span>Lima Belas Juta Rupiah &middot; Termasuk VPS tahun pertama</span>
             </div>
           </div>
         </div>
@@ -2620,7 +2599,7 @@
           <span
             >Professional website development delivered by Jaya Digital
             Konsultan.</span
-          ><span>Optional infrastructure is quoted separately.</span
+          ><span>VPS &plusmn; Rp6.000.000/tahun &middot; Total tahun pertama &plusmn; Rp15.000.000.</span
           ><button type="button" id="print-proposal">
             Print / Save as PDF <span aria-hidden="true">↗</span>
           </button>
@@ -2633,15 +2612,15 @@
       >
         <div class="eyebrow section-label"><span>05</span> Infrastructure</div>
         <div class="section-head">
-          <h2 id="infrastructure-title">Optional Infrastructure</h2>
+          <h2 id="infrastructure-title">Production Infrastructure</h2>
           <p>
             Infrastruktur disesuaikan dengan kebutuhan deployment HSNCO. Biaya
-            ini opsional dan tidak termasuk development investment Rp17.000.000.
+            VPS tahun pertama sudah termasuk dalam total project investment &plusmn; Rp15.000.000.
           </p>
         </div>
         <div class="infrastructure-grid reveal">
           <div>
-            <span class="optional-badge">Optional · Annual Investment</span>
+            <span class="optional-badge">Annual Infrastructure Investment</span>
             <h3>VPS / Production Hosting</h3>
             <div class="hosting-price">± Rp6.000.000 <small>/ year</small></div>
             <p>
@@ -2671,39 +2650,36 @@
           <div class="summary-grid">
             <table class="cost-table">
               <caption>
-                Development Investment
+                Project Investment &middot; Termasuk VPS
               </caption>
               <tbody>
                 <tr>
                   <th scope="row">Frontend Development</th>
-                  <td>Rp6.000.000</td>
+                  <td><del>Rp6.000.000</del><br><b>Rp4.500.000</b></td>
                 </tr>
                 <tr>
                   <th scope="row">Backend Development</th>
-                  <td>Rp6.000.000</td>
-                </tr>
-                <tr>
-                  <th scope="row">Quality Assurance</th>
-                  <td>Rp5.000.000</td>
-                </tr>
+                  <td><del>Rp6.000.000</del><br><b>Rp4.500.000</b></td>
+                </tr><tr><th scope="row">VPS / Production Hosting (1 tahun)</th><td>&plusmn; Rp6.000.000</td></tr>
+                
               </tbody>
               <tfoot>
                 <tr>
-                  <th scope="row">Development Total</th>
-                  <td>Rp17.000.000</td>
+                  <th scope="row">Total Project Investment</th>
+                  <td>&plusmn; Rp15.000.000</td>
                 </tr>
               </tfoot>
             </table>
             <div class="first-year">
               <div class="optional-line">
                 <span
-                  >Optional Infrastructure<br />VPS / Production Hosting</span
+                  >Production Infrastructure<br />VPS / Production Hosting</span
                 ><span>± Rp6.000.000 / year</span>
               </div>
               <h4>Estimated First-Year Investment</h4>
-              <strong>± Rp23.000.000</strong>
+              <strong>± Rp15.000.000</strong>
               <p>
-                Development Rp17.000.000 + optional infrastructure approximately
+                Development Rp9.000.000 + infrastructure approximately
                 Rp6.000.000/year.
               </p>
             </div>
@@ -2753,7 +2729,7 @@
               </div>
               <h3>Validate</h3>
               <p>
-                Quality assurance, testing, revision, dan stabilization sebelum
+                Peninjauan implementasi, revision, dan stabilization sebelum
                 rilis.
               </p>
             </article>
@@ -2824,7 +2800,7 @@
               <article>
                 <h3>Quality-Oriented</h3>
                 <p>
-                  Quality assurance menjadi bagian dari proses, termasuk selama
+                  Peninjauan implementasi menjadi bagian dari proses, termasuk selama
                   pengembangan.
                 </p>
               </article>
@@ -2841,10 +2817,9 @@
         <details class="commercial" open>
           <summary>Commercial Notes</summary>
           <ol>
-            <li>Development investment: <strong>Rp17.000.000.</strong></li>
+            <li>Total project investment: <strong>&plusmn; Rp15.000.000, termasuk VPS tahun pertama.</strong></li>
             <li>
-              VPS/infrastructure bersifat optional dan terpisah dari biaya
-              development.
+              VPS tahun pertama senilai &plusmn; Rp6.000.000 sudah diperhitungkan dalam total investasi.
             </li>
             <li>
               Harga infrastructure mengikuti spesifikasi dan harga provider
@@ -2924,12 +2899,10 @@
                 <dd><span class="status">Awaiting Approval</span></dd>
               </div>
               <div>
-                <dt>Development Investment</dt>
-                <dd>Rp17.000.000</dd>
+                <dt>Total Project Investment</dt><dd>&plusmn; Rp15.000.000</dd>
               </div>
               <div>
-                <dt>Optional Infrastructure</dt>
-                <dd>± Rp6.000.000 / year</dd>
+                <dt>Included Infrastructure</dt><dd>VPS / Production Hosting &middot; 1 tahun</dd>
               </div>
             </dl>
             <div class="acceptance-action">
@@ -2979,12 +2952,12 @@
         </div>
       </dl>
       <section>
-        <h2>Development Investment</h2>
+        <h2>Project Investment &middot; Hasil Negosiasi</h2>
         <table>
           <thead>
             <tr>
               <th scope="col">Komponen Pekerjaan</th>
-              <th scope="col">Investment</th>
+              <th scope="col">Harga Awal / Disepakati</th>
             </tr>
           </thead>
           <tbody>
@@ -2994,7 +2967,7 @@
                   >Design Implementation & Client-Side Development</small
                 >
               </td>
-              <td>Rp6.000.000</td>
+              <td><del>Rp6.000.000</del><br><b>Rp4.500.000</b></td>
             </tr>
             <tr>
               <td>
@@ -3002,57 +2975,31 @@
                   >Application & Server-Side Development</small
                 >
               </td>
-              <td>Rp6.000.000</td>
-            </tr>
-            <tr>
-              <td>
-                Quality Assurance<small
-                  >Manual & Automation Testing where applicable</small
-                >
-              </td>
-              <td>Rp5.000.000</td>
-            </tr>
+              <td><del>Rp6.000.000</del><br><b>Rp4.500.000</b></td>
+            </tr><tr><td>VPS / Production Hosting<small>Termasuk hosting tahun pertama</small></td><td>&plusmn; Rp6.000.000</td></tr>
+            
           </tbody>
           <tfoot>
             <tr>
-              <th scope="row">Total Development Investment</th>
-              <td>Rp17.000.000</td>
+              <th scope="row">Total Project Investment</th>
+              <td>&plusmn; Rp15.000.000</td>
             </tr>
           </tfoot>
         </table>
         <p class="print-note">
-          Tujuh Belas Juta Rupiah. Tidak termasuk optional infrastructure.
-        </p>
-      </section>
-      <section>
-        <h2>Optional Infrastructure</h2>
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                VPS / Production Hosting<small
-                  >Estimasi biaya infrastruktur per tahun · opsional</small
-                >
-              </td>
-              <td>± Rp6.000.000 / tahun</td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="print-note">
-          Biaya mengikuti spesifikasi VPS dan harga provider pada saat
-          pembelian.
+          Total sudah termasuk frontend, backend, dan VPS tahun pertama. Harga frontend + backend: Rp12.000.000 &rarr; Rp9.000.000 setelah negosiasi.
         </p>
       </section>
       <section>
         <div class="print-total">
           <span
             >Estimated First-Year Investment<br /><small
-              >Development + optional VPS</small
+              >Development + VPS</small
             ></span
-          ><strong>± Rp23.000.000</strong>
+          ><strong>± Rp15.000.000</strong>
         </div>
         <p class="print-note">
-          Development Rp17.000.000 + optional infrastructure ±
+          Development Rp9.000.000 + infrastructure ±
           Rp6.000.000/tahun.
         </p>
       </section>
@@ -3060,12 +3007,10 @@
         <h2>Catatan Biaya</h2>
         <ul>
           <li>
-            Development investment sebesar Rp17.000.000; VPS bersifat opsional
-            dan dihitung terpisah.
+            Total investasi &plusmn; Rp15.000.000 sudah mencakup frontend, backend, dan VPS tahun pertama.
           </li>
           <li>
-            Estimasi tahun pertama sebesar ± Rp23.000.000 berlaku jika
-            menggunakan opsi VPS.
+            Komponen VPS diestimasi untuk satu tahun; biaya mengikuti spesifikasi dan harga provider saat pembelian.
           </li>
           <li>
             Fitur atau pekerjaan di luar scope akan dibahas sebagai additional
@@ -3075,9 +3020,7 @@
             Proposal dapat disesuaikan berdasarkan requirement final HSNCO.
           </li>
           <li>
-            Nilai investasi terbuka untuk didiskusikan dan dinegosiasikan dengan
-            mempertimbangkan ruang lingkup pekerjaan serta kebutuhan final HSNCO.
-            Penyesuaian ditetapkan berdasarkan kesepakatan bersama.
+            Harga frontend dan backend telah disepakati melalui negosiasi, masing-masing dari Rp6.000.000 menjadi Rp4.500.000.
           </li>
         </ul>
       </section>
