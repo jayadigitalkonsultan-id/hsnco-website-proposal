@@ -2093,6 +2093,82 @@
         .cost-table td { width: 46%; }
         .cost-table tfoot th, .cost-table tfoot td { font-size: 12px; }
       }
+      @media print {
+        .print-costs .print-terms { break-before: page; page-break-before: always; }
+        .print-costs .print-terms h1 { font-size: 22pt; margin: 16px 0 6px; }
+        .print-costs .terms-list { padding-left: 18px; margin: 16px 0; font-size: 9pt; line-height: 1.45; }
+        .print-costs .terms-list li { margin: 0 0 9px; padding-left: 4px; break-inside: avoid; }
+        .print-costs .terms-list strong { color: #17202c; }
+        .print-costs .payment-details { border: 1px solid #ccd3dc; padding: 16px 18px; margin-top: 18px; break-inside: avoid; }
+        .print-costs .payment-details h2 { margin: 0 0 12px; }
+        .print-costs .bank-account { display: flex; align-items: center; gap: 24px; }
+        .print-costs .bank-account img { width: 85px; height: auto; flex-shrink: 0; }
+        .print-costs .bank-account p { margin: 0; font-size: 9pt; }
+        .print-costs .bank-account .account-number { display: block; font-size: 17pt; letter-spacing: .04em; color: #17202c; margin: 3px 0; }
+      }
+      @media print {
+        .print-costs .contract-page { break-before: page; page-break-before: always; font-size: 9pt; line-height: 1.45; }
+        .print-costs .contract-page h1 { font-size: 22pt; margin: 18px 0 6px; }
+        .print-costs .contract-page h2 { font-size: 12pt; margin: 15px 0 8px; }
+        .print-costs .contract-page p { font-size: 9pt; }
+        .print-costs .document-status { font-size: 8pt; padding: 8px 0; border-bottom: 1px solid #ccd3dc; margin-bottom: 14px; }
+        .print-costs .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 28px; margin: 14px 0; }
+        .print-costs .form-grid p { line-height: 2; }
+        .print-costs .signature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; margin-top: 20px; break-inside: avoid; }
+        .print-costs .signature-space { height: 58px; }
+        .print-costs .signature-grid p { font-size: 8pt; }
+        .print-costs .contract-table { table-layout: fixed; }
+        .print-costs .contract-table th, .print-costs .contract-table td { text-align: left; white-space: normal; vertical-align: top; padding: 7px 6px; font-size: 8pt; overflow-wrap: anywhere; }
+        .print-costs .contract-table th:first-child { width: 27%; }
+        .print-costs .fill-row td { height: 36px; }
+        .print-costs .contract-page ul { font-size: 9pt; }
+      }
+      @media print {
+        .print-costs .contract-page { font-size: 8pt; line-height: 1.3; }
+        .print-costs .contract-page header img { width: 65px; }
+        .print-costs .contract-page header { padding-bottom: 6px; }
+        .print-costs .contract-page h1 { font-size: 20pt; margin: 12px 0 6px; }
+        .print-costs .contract-page h2 { font-size: 11pt; margin: 11px 0 6px; }
+        .print-costs .contract-page p, .print-costs .contract-page ul { font-size: 8pt; }
+        .print-costs .contract-page .form-grid { margin: 8px 0; gap: 8px 28px; }
+        .print-costs .contract-page .form-grid p { line-height: 1.7; }
+        .print-costs .contract-table th, .print-costs .contract-table td { padding: 5px; font-size: 8pt; }
+        .print-costs .contract-page .fill-row td { height: 28px; }
+        .print-costs .contract-page .signature-grid { margin-top: 14px; }
+        .print-costs .contract-page .signature-space { height: 40px; }
+        .print-costs .contract-page footer { margin-top: 12px; padding-top: 8px; }
+      }
+      @media print {
+        @page contract { size: A4; margin: 12mm 16mm; }
+        .print-costs .contract-page {
+          page: contract;
+          break-inside: avoid-page;
+          page-break-inside: avoid;
+        }
+        .print-costs .spk-page .document-status { margin-bottom: 8px; padding: 5px 0; }
+        .print-costs .spk-page .form-grid { margin: 6px 0; }
+        .print-costs .spk-page .form-grid p { line-height: 1.5; }
+        .print-costs .spk-page h2 { margin: 9px 0 5px; }
+        .print-costs .spk-page .contract-table td,
+        .print-costs .spk-page .contract-table th { padding: 4px 5px; }
+        .print-costs .spk-page .fill-row td { height: 25px; }
+        .print-costs .spk-page .signature-grid { margin-top: 10px; }
+        .print-costs .spk-page footer { margin-top: 8px; padding-top: 6px; }
+      }
+    .header-pdf { flex-shrink:0; font-size:10px; padding:10px 14px; gap:12px; min-height:42px; }
+      .pdf-download { margin-top:24px; padding:25px; background:var(--paper); display:flex; align-items:center; justify-content:space-between; gap:24px; }
+      .pdf-download h3 { font-size:18px; margin-bottom:8px; }
+      .pdf-download p { font-size:11px; }
+      .pdf-download .pdf-help { margin-top:8px; font-size:10px; }
+      .pdf-download .button { flex-shrink:0; }
+      @media(max-width:960px) { .header-pdf { margin-left:auto; } .menu-toggle { order:3; } }
+      @media(max-width:700px) { .nav { gap:8px; } .nav .brand-note { display:none; } .nav .brand img { width:80px; } .header-pdf { font-size:9px; padding:10px; gap:8px; } .pdf-download { align-items:stretch; flex-direction:column; padding:20px; } }
+      @media print { .pdf-download, .header-pdf { display:none!important; } }
+    @media print {
+        .print-costs .contract-page .signature-space { height: 54px; }
+        .print-costs .signature-space.signed { display: flex; align-items: center; }
+        .print-costs .signature-space.signed img { width: 77px; height: 54px; object-fit: contain; }
+      }
     </style>
   </head>
   <body>
@@ -2126,10 +2202,9 @@
           ><a href="#scope">Scope</a><a href="#investment">Investment</a
           ><a href="#infrastructure">Infrastructure</a
           ><a href="#process">Process</a><a href="#about">About JDK</a
-          ><a class="button" href="#investment"
-            >View Investment <span class="arrow" aria-hidden="true">↗</span></a
           >
         </div>
+        <button class="button header-pdf" type="button" data-export-pdf>Unduh Proposal PDF <span aria-hidden="true">&darr;</span></button>
       </nav>
     </header>
     <main id="main">
@@ -2600,9 +2675,11 @@
             >Professional website development delivered by Jaya Digital
             Konsultan.</span
           ><span>VPS &plusmn; Rp6.000.000/tahun &middot; Total tahun pertama &plusmn; Rp15.000.000.</span
-          ><button type="button" id="print-proposal">
-            Print / Save as PDF <span aria-hidden="true">↗</span>
-          </button>
+          >
+        </div>
+        <div class="pdf-download">
+          <div><h3>Dokumen Proposal Lengkap</h3><p>Rincian biaya, Terms &amp; Conditions, SPK, serta lampiran scope dan desain.</p><p class="pdf-help">Klik tombol, lalu pilih <strong>Simpan sebagai PDF / Save as PDF</strong> pada pilihan printer.</p></div>
+          <button class="button" type="button" id="print-proposal" data-export-pdf>Unduh Proposal PDF <span class="arrow" aria-hidden="true">&darr;</span></button>
         </div>
       </section>
       <section
@@ -3028,6 +3105,106 @@
         Confidential · Commercial Proposal · © 2026 Jaya Digital Konsultan. All
         Rights Reserved.
       </footer>
+      <div class="print-terms">
+        <header>
+          <img src="JDK%20LOGO%20TERBARU.png" alt="Logo Jaya Digital Konsultan" width="1536" height="1024">
+          <div><strong>Jaya Digital Konsultan (JDK)</strong><p>Corporate Website Development &middot; HSNCO</p></div>
+        </header>
+        <h1>Terms &amp; Conditions</h1>
+        <p class="print-subtitle">Ketentuan pengembangan, maintenance, dan pembayaran</p>
+        <ol class="terms-list">
+          <li><strong>Ruang lingkup pekerjaan.</strong> Biaya pengembangan mencakup frontend dan backend sesuai fitur serta ruang lingkup yang disepakati. Total investasi Rp15.000.000 mencakup pengembangan tersebut dan alokasi VPS/hosting tahun pertama sebagaimana rincian biaya.</li>
+          <li><strong>Kesepakatan desain.</strong> Layout website merupakan gabungan dari Concept 02 (Layout 2) dan Concept 03 (Layout 3). Komposisi halaman dan elemen yang digunakan difinalisasi serta disetujui bersama sebelum implementasi.</li>
+          <li><strong>Perbaikan dan maintenance.</strong> Dukungan berlaku selama 3 bulan sejak tanggal serah terima website yang disepakati secara tertulis. Cakupan terbatas pada perbaikan bug hasil implementasi dan perubahan minor, seperti koreksi teks, penggantian gambar, atau penyesuaian tampilan kecil dalam layout yang telah disetujui.</li>
+          <li><strong>Perubahan di luar cakupan.</strong> Perubahan mayor, redesign, penambahan halaman atau fitur, perubahan alur bisnis, serta integrasi baru tidak termasuk maintenance. Pekerjaan tambahan maupun dukungan setelah 3 bulan memerlukan persetujuan biaya dan waktu pengerjaan secara terpisah sebelum dikerjakan.</li>
+          <li><strong>VPS dan hosting.</strong> Biaya mencakup 1 tahun sejak layanan hosting diaktifkan. Perpanjangan setelah periode tersebut menjadi tanggung jawab dan biaya client. Upgrade resource, domain, lisensi, serta layanan pihak ketiga di luar rincian penawaran dibahas terlebih dahulu dan tidak otomatis termasuk.</li>
+          <li><strong>Skema pembayaran.</strong> Total Rp15.000.000 dapat dibayarkan dalam 1 kali pembayaran, 2 kali, atau 3 kali pembayaran. Pilihan skema, nominal tiap termin, dan tanggal jatuh tempo disepakati secara tertulis sebelum pekerjaan dimulai. Pekerjaan dimulai setelah pembayaran pertama sesuai skema diterima; keterlambatan pembayaran dapat menunda pekerjaan setelah pemberitahuan kepada client.</li>
+          <li><strong>Materi dan persetujuan client.</strong> Client menyediakan konten, gambar, data, serta akses yang diperlukan dan memastikan hak penggunaannya. Feedback disampaikan secara terkonsolidasi melalui penanggung jawab yang ditunjuk. Keterlambatan materi atau persetujuan dapat menyesuaikan jadwal pengerjaan.</li>
+          <li><strong>Layanan pihak ketiga.</strong> Gangguan provider, perubahan layanan eksternal, atau perubahan kode dan konfigurasi oleh pihak lain tidak termasuk perbaikan gratis. Bantuan penanganan dibahas sesuai penyebab dan ruang lingkup; developer tetap bertanggung jawab atas perbaikan implementasinya dalam periode dukungan.</li>
+          <li><strong>Serah terima.</strong> Source code project dan akses terkait diserahkan setelah pelunasan serta penyelesaian pekerjaan sesuai scope. Client melakukan peninjauan hasil bersama developer; daftar koreksi yang termasuk scope disepakati saat serah terima.</li>
+          <li><strong>Konfirmasi kesepakatan.</strong> Scope final, desain, jadwal, dan skema pembayaran dikonfirmasi secara tertulis oleh kedua pihak. Setiap perubahan ketentuan memerlukan persetujuan bersama; dokumen ini menjadi acuan pelaksanaan setelah disetujui.</li>
+        </ol>
+        <section class="payment-details" aria-label="Informasi rekening pembayaran">
+          <h2>Informasi Pembayaran</h2>
+          <div class="bank-account">
+            <!-- Logo source: https://commons.wikimedia.org/wiki/File:BRI_2025.svg -->
+            <img src="bri-logo.svg" alt="Bank BRI" width="512" height="192">
+            <div><p>Bank Rakyat Indonesia (BRI)</p><strong class="account-number">044301001435569</strong><p>Atas nama <strong>Jaya Digital Konsultan</strong></p></div>
+          </div>
+          <p class="print-note">Mohon mencantumkan nama project HSNCO pada keterangan transfer dan mengirimkan bukti pembayaran kepada tim Jaya Digital Konsultan untuk konfirmasi.</p>
+        </section>
+        <footer>Confidential &middot; HSNCO Website Development &middot; Jaya Digital Konsultan</footer>
+      </div>
+      <div class="contract-page spk-page">
+        <header><img src="JDK%20LOGO%20TERBARU.png" alt="Jaya Digital Konsultan" width="1536" height="1024"><div><strong>Jaya Digital Konsultan (JDK)</strong><p>HSNCO &middot; Corporate Website Development</p></div></header>
+        <h1>Surat Perintah Kerja</h1>
+        <p class="document-status">DRAFT UNTUK DILENGKAPI DAN DITANDATANGANI &middot; Bukan bukti persetujuan</p>
+        <p>Nomor SPK: ........................................ &nbsp; Tanggal: <span data-document-date></span></p>
+        <div class="form-grid">
+          <div><h2>Pihak Pertama &middot; Client</h2><p>Nama badan/usaha: ......................................<br>Brand / project: HSNCO<br>Alamat: ..........................................................<br>Nama wakil: ...................................................<br>Jabatan: .........................................................<br>Email / telepon: ..............................................</p></div>
+          <div><h2>Pihak Kedua &middot; Pelaksana</h2><p>Nama: Jaya Digital Konsultan<br>Alamat: ..........................................................<br>.......................................................................<br>Nama wakil: Ryan Wijaya, S.Kom., CAWD<br>Jabatan: Project Manager<br>Email / telepon: ..............................................</p></div>
+        </div>
+        <h2>1. Pekerjaan dan dokumen acuan</h2>
+        <p>Pihak Pertama menunjuk Pihak Kedua untuk pengembangan frontend dan backend website HSNCO dengan gabungan Layout 2 dan Layout 3. Rincian Biaya, Terms &amp; Conditions, Lampiran A (Scope Pekerjaan), dan Lampiran B (Persetujuan Desain) pada paket ini menjadi acuan setelah dilengkapi dan disetujui kedua pihak. Perubahan dicatat dan disetujui secara tertulis sebelum dikerjakan.</p>
+        <h2>2. Nilai dan pembayaran</h2>
+        <p>Nilai pekerjaan disepakati sebesar <strong>Rp15.000.000 (Lima Belas Juta Rupiah)</strong>, mencakup frontend Rp4.500.000, backend Rp4.500.000, dan alokasi VPS/hosting tahun pertama Rp6.000.000. Perubahan spesifikasi VPS yang memengaruhi biaya memerlukan persetujuan tertulis sebelum pembelian.</p>
+        <p style="margin-top:8px">Pilih satu skema: &#x2610; 1 kali &nbsp; &#x2610; 2 kali &nbsp; &#x2610; 3 kali pembayaran.</p>
+        <table class="contract-table"><thead><tr><th>Termin</th><th>Nominal</th><th>Jatuh tempo / milestone</th></tr></thead><tbody><tr class="fill-row"><td>1</td><td>Rp ................................</td><td>........................................</td></tr><tr class="fill-row"><td>2 (jika dipilih)</td><td>Rp ................................</td><td>........................................</td></tr><tr class="fill-row"><td>3 (jika dipilih)</td><td>Rp ................................</td><td>........................................</td></tr></tbody></table>
+        <p class="print-note">Jumlah seluruh termin: Rp15.000.000. Coret termin yang tidak digunakan. Pembayaran ke BRI 044301001435569 a.n. Jaya Digital Konsultan.</p>
+        <h2>3. Jadwal dan dukungan</h2>
+        <p>Mulai: ................................ &nbsp; Target serah terima: ................................<br>Jadwal berlaku setelah scope/desain disetujui, materi dan akses tersedia, serta pembayaran pertama diterima. Maintenance minor berlaku 3 bulan sejak serah terima tertulis; hosting berlaku 1 tahun sejak aktivasi. Ketentuan rinci mengikuti Terms &amp; Conditions.</p>
+        <div class="signature-grid"><div><p>Pihak Pertama &middot; HSNCO</p><div class="signature-space"></div><p>Nama: ........................................<br>Jabatan: .....................................<br>Tanggal: .....................................</p></div><div><p>Pihak Kedua &middot; Jaya Digital Konsultan</p><div class="signature-space signed"><img src="TTD-RYAN.png" alt="Tanda tangan Ryan Wijaya" width="77" height="54"></div><p><strong>Ryan Wijaya, S.Kom., CAWD</strong><br>Project Manager<br>Tanggal: <span data-document-date></span></p></div></div>
+        <footer>SPK &middot; Dokumen berlaku setelah dilengkapi dan disetujui kedua pihak.</footer>
+      </div>
+      <div class="contract-page">
+        <header><img src="JDK%20LOGO%20TERBARU.png" alt="Jaya Digital Konsultan" width="1536" height="1024"><div><strong>Lampiran A &middot; Scope Pekerjaan</strong><p>HSNCO &middot; Corporate Website Development</p></div></header>
+        <p class="document-status">Nomor SPK: ................................ &nbsp; Versi: ................ &nbsp; Tanggal: <span data-document-date></span></p>
+        <h1>Scope &amp; Deliverables</h1>
+        <p>Daftar berikut merangkum cakupan penawaran. Daftar halaman, modul, serta kebutuhan integrasi final diisi dan disepakati sebelum development.</p>
+        <table class="contract-table"><thead><tr><th>Komponen</th><th>Cakupan pekerjaan</th><th>Hasil penyerahan</th></tr></thead><tbody>
+          <tr><td>Frontend</td><td>Implementasi gabungan Layout 2 dan Layout 3 yang disetujui; responsive layout, interaksi UI, optimasi frontend, dan integrasi backend.</td><td>Antarmuka website sesuai daftar halaman dan desain final.</td></tr>
+          <tr><td>Backend</td><td>Arsitektur backend, pengelolaan data/konten, logika aplikasi, keamanan dan integrasi sesuai modul final.</td><td>Backend yang terhubung dengan frontend sesuai fitur yang disepakati.</td></tr>
+          <tr><td>VPS / hosting</td><td>Konfigurasi production dan pendampingan deployment; alokasi hosting tahun pertama.</td><td>Website pada environment production. Provider, spesifikasi dan tanggal aktif dicatat saat aktivasi.</td></tr>
+          <tr><td>Handover &amp; dukungan</td><td>Source code serta akses terkait setelah pelunasan; perbaikan bug implementasi dan perubahan minor selama 3 bulan sejak serah terima.</td><td>Source code, akses, dan catatan serah terima.</td></tr>
+        </tbody></table>
+        <h2>Daftar halaman dan modul final</h2>
+        <table class="contract-table"><thead><tr><th>Halaman / modul</th><th>Fungsi &amp; data yang dikelola</th><th>Batasan / kriteria selesai</th></tr></thead><tbody>
+          <tr class="fill-row"><td>................................</td><td>........................................</td><td>........................................</td></tr><tr class="fill-row"><td>................................</td><td>........................................</td><td>........................................</td></tr><tr class="fill-row"><td>................................</td><td>........................................</td><td>........................................</td></tr><tr class="fill-row"><td>................................</td><td>........................................</td><td>........................................</td></tr>
+        </tbody></table>
+        <p class="print-note">Jika diperlukan, tambahkan daftar lanjutan bernomor dan ditandatangani. Baris kosong bukan persetujuan atas fitur tambahan.</p>
+        <h2>Kebutuhan yang harus dikonfirmasi</h2>
+        <p>Bahasa website: ................................ &nbsp; Role / akses admin: ................................<br>Integrasi eksternal: ........................................................................................................<br>Provider / spesifikasi VPS: .............................................................................................<br>PIC konten dan approval client: ....................................................................................</p>
+        <h2>Batas cakupan dan penerimaan</h2>
+        <ul><li>Client menyediakan materi, konten, aset, dan akses yang diperlukan. Fitur, halaman, integrasi, domain atau lisensi yang belum tercantum memerlukan konfirmasi biaya dan jadwal terlebih dahulu.</li><li>Penerimaan dilakukan dengan meninjau halaman dan fungsi pada daftar final bersama client; koreksi atas ketidaksesuaian scope dicatat saat serah terima.</li><li>Perubahan mayor dan penambahan scope memerlukan persetujuan tertulis. Perpanjangan hosting setelah tahun pertama menjadi tanggung jawab client.</li></ul>
+        <div class="signature-grid"><div><p>Disetujui client / HSNCO</p><div class="signature-space"></div><p>Nama &amp; tanda tangan: ..............................<br>Tanggal: .....................................</p></div><div><p>Disetujui Jaya Digital Konsultan</p><div class="signature-space signed"><img src="TTD-RYAN.png" alt="Tanda tangan Ryan Wijaya" width="77" height="54"></div><p><strong>Ryan Wijaya, S.Kom., CAWD</strong><br>Project Manager<br>Tanggal: <span data-document-date></span></p></div></div>
+        <footer>Lampiran A &middot; Merupakan bagian dari SPK setelah disetujui kedua pihak.</footer>
+      </div>
+      <div class="contract-page">
+        <header><img src="JDK%20LOGO%20TERBARU.png" alt="Jaya Digital Konsultan" width="1536" height="1024"><div><strong>Lampiran B &middot; Persetujuan Desain</strong><p>HSNCO &middot; Corporate Website Development</p></div></header>
+        <p class="document-status">Nomor SPK: ................................ &nbsp; Versi desain: ................ &nbsp; Tanggal: <span data-document-date></span></p>
+        <h1>Design Direction Approval</h1>
+        <p><strong>Arah desain: gabungan Layout 2 dan Layout 3.</strong> Pemilihan elemen per bagian di bawah perlu dikonfirmasi bersama; tidak seluruh elemen dari kedua prototype otomatis termasuk scope.</p>
+        <h2>Referensi prototype</h2>
+        <p>Layout 2: <a href="https://ryanwyjaya.github.io/hsnco-demo-2/" target="_blank" rel="noopener noreferrer">https://ryanwyjaya.github.io/hsnco-demo-2/</a><br>Layout 3: <a href="https://ryanwyjaya.github.io/hsnco-demo-3/" target="_blank" rel="noopener noreferrer">https://ryanwyjaya.github.io/hsnco-demo-3/</a></p>
+        <h2>Pemetaan layout yang disepakati</h2>
+        <table class="contract-table"><thead><tr><th>Bagian website</th><th>Pilih sumber layout</th><th>Catatan final / penyesuaian</th></tr></thead><tbody>
+          <tr class="fill-row"><td>Header &amp; navigasi</td><td>&#x2610; Layout 2 &nbsp; &#x2610; Layout 3</td><td>........................................</td></tr>
+          <tr class="fill-row"><td>Hero / cover</td><td>&#x2610; Layout 2 &nbsp; &#x2610; Layout 3</td><td>........................................</td></tr>
+          <tr class="fill-row"><td>Profil / pengenalan</td><td>&#x2610; Layout 2 &nbsp; &#x2610; Layout 3</td><td>........................................</td></tr>
+          <tr class="fill-row"><td>Layanan / practice areas</td><td>&#x2610; Layout 2 &nbsp; &#x2610; Layout 3</td><td>........................................</td></tr>
+          <tr class="fill-row"><td>Konten / halaman detail</td><td>&#x2610; Layout 2 &nbsp; &#x2610; Layout 3</td><td>........................................</td></tr>
+          <tr class="fill-row"><td>Kontak &amp; footer</td><td>&#x2610; Layout 2 &nbsp; &#x2610; Layout 3</td><td>........................................</td></tr>
+        </tbody></table>
+        <p class="print-note">Jika memilih gabungan dalam satu bagian, tandai keduanya dan uraikan elemen yang dipilih. Coret bagian yang tidak digunakan; daftar ini tidak menambah scope halaman atau fitur pada Lampiran A.</p>
+        <h2>Arsip desain yang disetujui</h2>
+        <p>Nama file / tautan arsip screenshot atau desain final:<br>....................................................................................................................................<br>Versi / tanggal arsip: ................................ &nbsp; Jumlah halaman lampiran: ....................<br>Catatan warna, font, interaksi, dan responsive:<br>....................................................................................................................................<br>....................................................................................................................................</p>
+        <p class="print-note">Arsip final yang diidentifikasi di atas menjadi acuan agar perubahan pada demo live tidak mengubah kesepakatan. Lengkapi arsip dan pemetaan sebelum memberikan persetujuan final.</p>
+        <h2>Konfirmasi desain</h2>
+        <p>&#x2610; Disetujui untuk implementasi sesuai pemetaan dan arsip final.<br>&#x2610; Memerlukan revisi sebelum disetujui: ....................................................................<br>....................................................................................................................................</p>
+        <p class="print-note">Perubahan mayor setelah approval dibahas sebagai perubahan scope beserta dampak biaya dan jadwal sebelum dilaksanakan.</p>
+        <div class="signature-grid"><div><p>Disetujui client / HSNCO</p><div class="signature-space"></div><p>Nama &amp; tanda tangan: .....................<br>Tanggal: .....................................</p></div><div><p>Disetujui Jaya Digital Konsultan</p><div class="signature-space signed"><img src="TTD-RYAN.png" alt="Tanda tangan Ryan Wijaya" width="77" height="54"></div><p><strong>Ryan Wijaya, S.Kom., CAWD</strong><br>Project Manager<br>Tanggal: <span data-document-date></span></p></div></div>
+        <footer>Lampiran B &middot; Merupakan bagian dari SPK setelah disetujui kedua pihak.</footer>
+      </div>
     </article>
     <footer class="site-footer">
       <div class="container">
@@ -3074,6 +3251,13 @@
     </dialog>
     <script>
       "use strict";
+      const documentOpenedAt = new Date();
+      const documentDate = new Intl.DateTimeFormat('id-ID', {
+        day: 'numeric', month: 'long', year: 'numeric'
+      }).format(documentOpenedAt);
+      document.querySelectorAll('[data-document-date]').forEach(element => {
+        element.textContent = documentDate;
+      });
       const toggle = document.querySelector(".menu-toggle");
       const navigation = document.querySelector("#navigation");
       function closeMenu(returnFocus = false) {
@@ -3118,9 +3302,9 @@
         )
           approvalDialog.close();
       });
-      document
-        .querySelector("#print-proposal")
-        .addEventListener("click", () => window.print());
+      document.querySelectorAll('[data-export-pdf]').forEach(button => {
+        button.addEventListener('click', () => { closeMenu(); window.print(); });
+      });
       const reducedMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)",
       );
